@@ -105,20 +105,8 @@ URL 대소문자 규칙
 HTML 파일명
 	- *.html
 	- *.htm
-	
-<<<<<<< HEAD
 
 
-
-
-잠시 Github 테스트~
-	
-	
-	
-=======
-왜 뭐가 문젠데ㅠㅠ
->>>>>>> refs/remotes/origin/main
-	
 	
 	
 		
