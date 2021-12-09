@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		</head>
+	<body>
+	
+	<!-- ex03_basic.html -->
+	
+	<!-- 
+		Web Programming
+		1. Client Programming, Front-end Programming
+			- 클라이언트 쪽에서 실행하는 언어(브라우저)
+			a. HTML
+				- 역할	 : 출력할 레이아웃과 내용물을 만든다.
+				- 결과물 : 인쇄된 전단지 > 정적 페이지
+			b. CSS
+				- 역할 : a의 결과에 서식을 만든다.
+			c. JavaScript
+				- 역할 : a+b의 결과에 프로그래밍 기능을 만든다.
+		
+		2. Server Programming, Back-end Programming
+			- 서버 측에서 실행하는 언어
+			a. Java(JSP, Servlet)
+			b. ASP
+			c. PHP
+			d. ASP .NET
+			e. Node.js
+			f. Python
+			g. Ruby
+			
+			
+		HTML 언어 구성 요소
+		1. 태그(Tag), 엘리먼트(Element)
+			- 예약어(명령어)를 <>로 묶어놓은 요소
+			- 웹 페이지의 골격 형성
+				a. 요소를 배치
+				b. 레이아웃 형성
+				
+		2. 태그의 표현 방식
+			a. <태그명></태그명>
+				- <태그명> 	: 시작태그
+				- </태그명> : 끝태그
+				- 자신의 영역을 표현한다. ({ 역할})
+				
+			b. <태그명>, <태그명 />
+				- <태그명>	 		: 시작태그 & 끝태그	> HTML5
+				- <태그명 /> 		: 시작태그 & 끝태그	> XHTML 1.0
+				- <태그명></태그명> : 시작태그 & 끝태그	> 잘 사용 안함
+				- 단독태그, 빈태그, Empty Tag	
+				
+				
+		3. 태그의 내용물 형식, Content Type
+			- <태그>내용물</태그>
+			a. 자식태그
+				- 또 다른 태그들로만 내용물이 구성된다.
+				- 문자열이 올 수 없다.
+			b. PCDATA
+				- 문자열만 올 수 있다.
+				- 자식태그는 가질 수 없다.
+			c. Empty
+				- 아무것도 가지지 않는다.
+			d. Mixed, 혼합형
+				- 자식으로 태그와 문자열이 모두 올 수 있다.
+				- a + b		
+				- HTML의 대부분의 태그는 혼합형이다.
+				
+			
+			속성(Attribute)
+			- 태그의 성질을 정의하는 역할
+			- 태그가 가지는 데이터의 한 종류
+			- 표기법
+				a. <시작태그 속성명="값"></끝태그>
+				b. <시작태그 속성명="값" 속성명="값" 속성명="값"></끝태그>
+				c. <단독태그 속성명="값">
+				
+				d. <시작태그 속성명="값"></끝태그> : 사용O
+				e. <시작태그 속성명='값'></끝태그> : 사용O
+				f. <시작태그 속성명=값></끝태그>   : 절대사용X
+			
+			
+			HTML의 데이터 역할
+			1. PCDATA
+				- 출력 데이터 용도
+				- 출력되는 형식의 태그에 따라 달라진다.
+			2. Attribute
+				- 태그의 성질을 바꾸는 용도
+				- 화면에 출력하는 데이터가 아니다.
+				
+				
+			PCDATA, 텍스트	
+			- 태그가 소유하는 데이터
+			- 화면에 출력되는 데이터
+			- Parsed > 브라우저 이 영역을 해석하는 대상으로 인식한다.
+			
+			
+			Entity, 엔티티
+			- 미리 정해져 있는 약속 > 약속된 표기법을 소스에 표시하면 브라우저가 실행 시 약속된 출력으로 바꿔서 표현한다.
+			- &엔티티명;
+			- &nbsp; 	 ***
+			- &lt;	 (<) ***
+			- &gt;	 (>) ***
+			- &quot; (")
+			- &apos; (')
+			- &amp;	 (&)
+			- &copy; (©)
+			- &#문자코드; 
+			
+	 -->
+	 
+	 	&copy;오늘은 &lt;br&gt; 태그를 배웁니다..!
+	 	
+	 	<h1 align="center">제목 입니다!</h1>
+	 
+		<h1 style="color: cornflowerblue; border-bottom:3px dashed orange;">HTML 언어입니다</h1>
+		<p id="p1" style="border: 3px dotted grey; padding: 15px; width : 200px;">
+			✨✨HTML 언어는 웹 페이지에 출력될 레이아웃(골격)과 출력될 내용물을 생성합니다.
+		</p>
+		
+		
+		<input type="button" value="클릭" onclick="window.document.getElementById('p1').style.display='none';">
+		
+		
+		
+	</body>
+</html>
