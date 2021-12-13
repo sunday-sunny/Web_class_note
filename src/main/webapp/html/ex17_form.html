@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex17_form.html</title>
+	</head>
+	<body>
+		<!--  ex17_form.html 
+		
+			폼, Form
+			- 입력 양식
+			-클라이언트(사용자)로부터 입력장치(키보드, 마우스)를 통해서 데이터를 입력받는 역할
+			- 입력 데이터 > 서버로 전송!
+			- 일종의 프로그래밍 기능을 제공(***)
+			- ex) 텍스트 박스, 버튼, 라디오 버튼, 체크 박스, 파일업로드 등..
+			- <form> 태그 + <form> 자식 태그
+		
+			
+			1. <form>
+			- 모든 입력 컨트롤을 감싸는 컨테이너
+			- 스스로 랜더링 결과를 만들지 않는다.(화면에 안보임)
+			- <form> 내부의 입력 태그들이 입력한 모든 값들을 서버로 전송하는 역할(***)
+			
+			a. form.action 속성
+				- 데이터를 수신할 서버 프로그램의 주소(URL)
+				- 서버측 프로그램 주소 > Java(Servlet, JSP, Spring 등)
+				
+				
+			b. form.method 속성
+				- 데이터를 전송하는 방식
+				1. GET
+					- http://localhost:8090/client/html/ex17_ok.jsp?txt1=써니
+					- 전송할 데이터를 URL에 붙여서 전송하는 방식
+					- 전송하는 데이터가 노출(주소창) > 보안 X
+					- URL(256자 제한) > Overflow > 데이터가 짤림 > 4KB 정도 허용(신뢰X)
+					- URL > 한글 허용 안함 > 자동 인코딩, 디코딩 발생 > 영문자, 숫자 전송용
+					- URL?이름=값
+					- URL?이름=값?이름=값&이름=값
+				
+				2. POST
+					- http://localhost:8090/client/html/ex17_ok.jsp
+					- 전송할 데이터를 패킷에 넣어서 전송하는 방식(FM)
+					- 전송하는 데이터가 노출 안된 > 보안 O
+					- 전송 길이 무제한
+					- 보내는 데이터 종류 > 모든 형태 가능
+					
+					
+			
+			
+			*** 톰캣 실행 오류
+			1. 작업관리자 > 세부정보 > javaw.exe > 이미 톰캣이 실행중인 것
+			기존 톰캣과 충돌 > javaw.exe 종료 시키기
+			
+			2. 본인의 행동 기억! > 8005
+			
+			
+		-->
+		
+		
+		<h1>사용자 데이터 입력</h1>
+		<form action="/client/html/ex17_ok.jsp" method="post">
+			<input type="text" name="txt1" placeholder="내용을 입력하세요">
+			<input type="submit" value="서버로 전송하기">
+		</form>
+		
+		
+		<h1>네이버 검색</h1>
+		<form method="Get" action="https://search.naver.com/search.naver">
+			<input type="text" name="query" placeholder="네이버에 검색하기">
+			<input type="submit" value="검색하기">
+		</form>
+
+
+		
+		
+	</body>
+</html>

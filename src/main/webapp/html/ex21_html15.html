@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex21_html5.html</title>
+	</head>
+	<body>
+		<!-- ex21_html5.html 
+			
+			HTML5 Layout 태그
+			- Semantic Tag > Semantic Web
+			- 블럭 태그
+			- 의미가 중요한 태그(출력 결과가 중요하지 않은)
+			
+			<div> : 블럭태그
+			
+			1. <header>
+				- 머릿말 역할
+			2. <nav>
+				- 메뉴 역할
+			3. <section>
+				- 콘텐츠 역할
+			4. <article>
+				- 세부 항목 역할
+			5. <aside>
+				- 보조 컨텐츠 역할
+			6. <footer>
+				- 바닥글 역할
+			
+		-->
+		
+		<!-- Use div Tag -->
+		<div id="main">
+			<div id="menu">주메뉴</div>
+			<div id="submenu">보조메뉴</div>
+			<div id="content">
+				<div id="list">
+					<div class="item">아이템</div>
+					<div class="item">아이템</div>
+					<div class="item">아이템</div>
+				</div>
+				<div id="side">광고, 채팅창</div>
+			</div>
+		</div>
+		
+		<!-- Use Semantic Tag -->
+		<main>
+			<header>
+				<nav>주메뉴</nav>
+			</header>
+			<section>
+				<nav>보조메뉴</nav>
+				<section>
+					<article>항목</article>
+					<article>항목</article>
+					<article>항목</article>
+				</section>
+				<aside>
+					광고, 채팅창
+				</aside>
+			</section>
+			<footer>하단부</footer>
+		</main>
+		
+	</body>
+</html>
