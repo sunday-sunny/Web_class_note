@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 중복 적용되는 속성을 일괄적으로 처리하는 방법
+
+            그룹 선택자
+            - 2개 이상의 선택자를 한 번에 적용하는 방법
+            - 선택자, 선택자, 선택자 { 구현부; }
+        */
+        
+        .jazz__title,
+        .jazz__subtitle,
+        .jazz__info,
+        .jazz__lineup {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .jazz__info {
+            color : lightslategrey;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- 05_selector.html -->
+
+    <h1 class="jazz__title">영화관 속 재즈 로프트</h1>
+
+    <h2 class="jazz__subtitle">프로그램 소개</h2>
+    
+    <h2 class="jazz__subtitle">1강. 함께 듣는 재즈</h2>
+    <p class="jazz__info">함께 모여 음악을 듣는 것의 의미.</p>
+    <p class="jazz__lineup">듀크 엘링턴, 머디 워터스, 키스 재럿, 브래드 멜다우 등</p>
+
+    <h2 class="jazz__subtitle">2강. 영화와 재즈 </h2>
+    <p class="jazz__info">영화 속에서 만났던 재즈의 명곡들.</p> 
+    <p class="jazz__lineup">버디 리치, 에럴 가너, 랄로 시프린, 핸리 맨시니 등</p>
+
+    <hr>
+    <p>※강사의 사정으로 폐강될 경우 전액 환불</p>
+
+</body>
+</html>

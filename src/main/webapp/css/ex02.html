@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ex02.css">
+    <title>Document</title>
+
+    <style>
+        li {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex02.html 
+
+        HTML 문서에 CSS를 적용하는 방법
+
+        1. 인라인 스타일 시트, Inline Style Sheet
+            - 서식을 적용할 태그에 직접 명시
+            - <태그 style="CSS 작성 영역"> 속성 사용
+            - 장점 : 가독성 높음 > HTML 코드와 CSS 코드가 함께 있어서.
+                    적용 범위 좁음 > 집중도가 높음
+            - 단점 : CSS 재사용 불가능 > 1회성 적용(***)
+
+        2. 내부 스타일 시트, Embeded Style Sheet
+            - <style> 태그 내에 서식을 명시
+            - 장점 : CSS 재사용 가능 > 일괄 적용 가능 > 생산성 + 유지보수
+            - 단점 : 가독성 낮음 > HTML 코드와 CSS 코드가 분리되어서.
+                    적용 범위 넓다 > 집중도 낮음
+
+        3. 외부 스타일 시트, External Style Sheet
+                - *.css 파일에 서식을 명시
+                - <link> 태그를 사용해서 참조 
+                - 장점 : 모든 문서에 재사용 가능 > 재사용성 최고!
+                - 단점 : 가독성 최저!!
+        ✿˘◡˘✿ 
+    -->
+
+    <h1>오늘의 할일</h1>
+    <ul>
+        <li>VSCode 설치하기</li>
+        <li >CSS 선택자 공부하기</li>
+        <li style="color : lightblue;">영화관 속 재즈로프트 강연 ✿˘◡˘✿</li>
+        <li>점심 메뉴 고르기</li>
+        <li>GitHub 작성</li>
+    </ul>
+
+</body>
+</html>

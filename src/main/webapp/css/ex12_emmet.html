@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex12_emmet.html 
+        
+        Emmet, Zen-Coding
+        - CSS 선택자 문법을 사용해서 HTML/CSS 코드를 손쉽게 작성하는 기능(유틸, 확장)
+        - https://emmet.io
+
+        - VSCode에는 이미 내장 되어있으므로, eclipse에만 따로 설치
+    -->
+
+    <!-- 속성 생성 -->
+    div[title]
+    <div title=""></div>
+
+    <!-- 속성 값도 같이 넣을 수 있음 -->
+    div[title='상자']
+    <div title="상자"></div>
+
+    <!-- 다중 속성 적용 -->
+    div[width height]
+    <div width="" height=""></div>
+
+    <!-- 복합 사용 -->
+    img#cat01.cat.animal[width=200 height=300 title냥이]
+    <img src="" alt="" id="cat01" class="cat animal" width="200" height="300" title냥이="">
+
+
+    <!-- PCDATA -->
+    <!-- 오늘 알게 된 최고의 꿀팁 -->
+    div{상자}
+    <div>상자</div>
+
+    div#box1.box[title=상자]{상자입니다.}
+    <div id="box1" class="box" title="상자">상자입니다.</div>
+
+    div.item[title]{아이템}*5
+    <div class="item" title="1">아이템</div>
+    <div class="item" title="2">아이템</div>
+    <div class="item" title="3">아이템</div>
+    <div class="item" title="4">아이템</div>
+    <div class="item" title="5">아이템</div>
+
+    <!-- 돌았군... -->
+    div#box$*5
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+
+    <!-- 와.. Fucking Sexy -->
+    div#box$$*5
+    <div id="box01"></div>
+    <div id="box02"></div>
+    <div id="box03"></div>
+    <div id="box04"></div>
+    <div id="box05"></div>
+
+    div#box$${상자$}*5
+    <div id="box01">상자1</div>
+    <div id="box02">상자2</div>
+    <div id="box03">상자3</div>
+    <div id="box04">상자4</div>
+    <div id="box05">상자5</div>
+
+    a[href='view.jsp?seq=$']{글보기}*5
+    <a href="view.jsp?seq=1">글보기</a>
+    <a href="view.jsp?seq=2">글보기</a>
+    <a href="view.jsp?seq=3">글보기</a>
+    <a href="view.jsp?seq=4">글보기</a>
+    <a href="view.jsp?seq=5">글보기</a>
+
+
+
+    <!-- 형제 선택자 -->
+    a ~ b : 형 -> emmet에서는 사용 불가
+    a + b : 바로 위의 형
+
+    div+p
+    <div></div>
+    <p></p>
+
+    h1+p+p
+    <h1></h1>
+    <p></p>
+    <p></p>
+
+    h1+p*3
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    (h1+p)*3
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+
+    (h1#title$.titles{제목입니다.})+(p.content{설명입니다.})*3
+    <h1 id="title1" class="titles">제목입니다.</h1>
+    <p class="content">설명입니다.</p>
+    <p class="content">설명입니다.</p>
+    <p class="content">설명입니다.</p>
+
+    
+    <!-- 자식 선택자 -->
+    a b : emmet에서는 사용 불가
+    a > b
+
+    div>a
+    <div><a href=""></a></div>
+
+    <!-- ~So Cool~ -->
+    h1{오늘의 할일}+ul#list>li.item{항목$}*5
+    <h1>오늘의 할일</h1>
+    <ul id="list">
+        <li class="item">항목1</li>
+        <li class="item">항목2</li>
+        <li class="item">항목3</li>
+        <li class="item">항목4</li>
+        <li class="item">항목5</li>
+    </ul>
+
+
+    table#tbl>tr*3>td.cell*3
+    <table id="tbl">
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+    </table>
+    
+
+    <!-- Lorem Ipsum -->
+    <!-- 이거 옛날에 봤었는데 이케 쓰는거였구나ㅋㅋ -->
+    lorem 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi expedita itaque voluptatem illum necessitatibus ipsum incidunt, consequuntur officiis perspiciatis inventore nisi dolorum, optio, magni molestiae minus autem quam nostrum?
+
+    lorem5
+    Lorem ipsum dolor sit amet.
+
+    lorem1
+    Lorem.
+
+    h1>lorem10
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, debitis.</h1>
+
+    (h1>lorem8)+(p>lorem100)*3
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi culpa esse eligendi. Provident quaerat repudiandae, excepturi doloremque suscipit voluptatem laudantium reprehenderit pariatur consequatur dolorem quis distinctio maxime veritatis quae nobis architecto, minima, quasi nihil omnis earum! Veritatis molestiae aspernatur aliquid qui explicabo quae harum minima, aliquam placeat cumque repellendus amet, est, molestias dolor ea quibusdam animi delectus eligendi tempore dicta repellat nisi consequatur earum quod. Reiciendis ut doloribus, ipsa quod incidunt blanditiis officia dolorum hic natus. Quo, omnis quas magni reiciendis doloremque suscipit ut placeat, autem quaerat esse harum eligendi rerum dolorum voluptas accusamus assumenda nemo recusandae, quibusdam mollitia veniam.</p>
+    <p>Porro rem vel, nulla in quaerat error ab. At pariatur totam ducimus ipsam velit debitis labore, eaque commodi ipsa unde, quas alias sit expedita eligendi iste quia dolores saepe sunt ea voluptas voluptatibus cupiditate consequuntur cumque earum? Iste quaerat inventore quos veniam. Maxime odit quia animi, ullam quae cum eaque rem laudantium? Sequi doloremque provident voluptatem eveniet enim asperiores, rerum sint ratione facilis alias quod illo recusandae autem pariatur voluptatibus id dolorem eligendi minima sit doloribus. Libero odio ratione facilis, illum facere optio ipsam corrupti quos exercitationem ipsa deleniti expedita tempora nulla doloribus cum perspiciatis rerum corporis excepturi quae nobis?</p>
+    <p>Aspernatur corporis minima neque animi distinctio eum tempore? Ducimus eos officia quae inventore velit sequi error? Aliquam ex quaerat minima. Consequatur accusamus autem illum nostrum facere explicabo sed omnis, rerum et, libero debitis dolorem error atque facilis iusto tempora dolore aliquid aut porro id neque quae! Cupiditate inventore dignissimos, consequatur porro quod obcaecati voluptatem? Eos obcaecati numquam, minima asperiores perspiciatis blanditiis odit facilis ducimus fugiat fuga animi voluptatibus delectus fugit neque vitae eaque. Veniam quam cumque vel quos quo, quis cum minus ratione exercitationem iste aut eveniet consequuntur ut. Corporis veritatis repellendus deserunt deleniti ipsam ullam porro nesciunt soluta minus.</p>
+
+</body>
+</html>

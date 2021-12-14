@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            1. 선택자 충돌
+                - 동일한 선택자가 동일한 속성을 적용하면 > 작성 순서에 따라
+            2. 속성 충돌
+            3. 선택자 우선순위
+                - 서로 다른 선택자가 하나의 태그를 선택했을 때 
+                - id > class > tag 
+
+
+            * 내부 스타일 시트와 외부 스타일 시트는 우선순위 동일
+            > 나중 것이 적용
+        */
+
+        div.box {
+            width: 100px;
+            height: 100px;
+            background-color: lightpink;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background-color: lightsalmon;
+        }
+
+        /* !important 사용하지 말 것!  */
+        div:last-child {
+            background-color: lightyellow !important;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- ex11_selector.html 
+    
+        <div>, Division
+        - 영역
+        - 블럭태그
+        - 아무것도 안함(***) > 모든 태그를 통틀어 가장 사용 빈도가 높다
+        
+        <span>, Span
+        - 영역
+        - 인라인 태그
+        - 아무것도 안함(***)
+
+
+        ** 개인 포트폴리오 **
+        1. 자료 수집
+            - 프로젝트 자료 긁어모으기
+            1. 콘솔, DB
+            2. 토이 프로젝트
+            3. 학교, 개인 프로젝트 
+                - 전부 (IT에 손가락 하나 걸쳐 있으면 넣음)
+                - 기획서만 있어도 첨부
+
+        2. 주제 선정 > 생각(구성) > 기획
+            - 포함 요소
+            - 요소 구성, 순서, 크기 등..
+
+        3. 구현
+            - HTML + CSS > 웹페이지
+
+        4. 배포(서버 업로드)
+
+    -->
+
+    <div id="box1" class="box">💗</div>
+    <div class="box">💗</div>
+    <div>
+        <div class="box">💗</div>
+    </div>
+
+    
+
+</body>
+</html>
