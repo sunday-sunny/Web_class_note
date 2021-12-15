@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* display
+            - 요소의 출력 방식 조작
+
+            1. none
+            2. inline
+            3. inline-block
+            4. block
+        */
+
+        .box {
+            border: 2px solid lightskyblue;
+            width: 100px;
+            height: 100px;
+            display: inline;
+        }
+
+        .link {
+            border: 2px solid lightgray;
+            text-decoration: none;
+            width: 100px;
+            height: 50px;
+            display: block;
+        }
+
+        #menu ul {
+            border : 1px solid lightslategray;
+        }
+
+        #menu ul li {
+            display: inline-block;
+            width: 19%;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: beige;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <!-- ex24_display.html -->
+    <nav id="menu">
+        <ul>
+            <li>메뉴</li>
+            <li>메뉴</li>
+            <li>메뉴</li>
+            <li>메뉴</li>
+            <li>메뉴</li>
+        </ul>
+    </nav>
+
+
+    <h1>Block Tag</h1>
+
+    <div id="box1" class="box">상자1💗</div>
+    <div id="box2" class="box">상자2💛</div>
+    <div id="box3" class="box">상자3💜</div>
+
+    <h1>Inline Tag</h1>
+    <a href="" id="link1" class="link">링크1</a>
+    <a href="" id="link2" class="link">링크2</a>
+    <a href="" id="link3" class="link">링크3</a>
+    <hr>
+
+
+
+
+
+</body>
+</html>

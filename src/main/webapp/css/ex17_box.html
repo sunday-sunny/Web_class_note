@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #tblList {
+            border: 1px solid grey;    
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        #tblList th,
+        #tblList td {
+            border : 1px solid grey;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        #tblList #col1 { 
+            width: 50px;
+        }
+        #tblList #col2 { 
+            width: 500px;
+        }
+        #tblList #col3 { 
+            width: 100px;
+        }
+        #tblList #col4 { 
+            width: 100px;
+        }
+        #tblList #col5 { 
+            width: 50px;
+        }
+
+        #tblList th {
+            background-color: wheat;
+        }
+
+        #tblList td {
+            text-align: center;
+        }
+
+        #tblList .cell2 {
+            text-align: left;
+        }
+
+        #tblList tr:hover{
+            background-color: thistle;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- ex17_box.html -->
+
+    <h1>게시판</h1>
+
+    <table id="tblList" class="table">
+        <tr>
+            <th id="col1">번호</th>
+            <th id="col2">제목</th>
+            <th id="col3">이름</th>
+            <th id="col4">날짜</th>
+            <th id="col5">조회수</th>
+        </tr>
+
+        <tr>
+            <td class="cell1">001</td>
+            <td class="cell2">Lorem ipsum dolor sit amet.</td>
+            <td class="cell3">Lorem.</td>
+            <td class="cell4">2021-12-01</td>
+            <td class="cell5">01</td>
+        </tr>
+        <tr>
+            <td class="cell1">002</td>
+            <td class="cell2">Eum omnis dolor error dicta!</td>
+            <td class="cell3">Voluptatum.</td>
+            <td class="cell4">2021-12-02</td>
+            <td class="cell5">02</td>
+        </tr>
+        <tr>
+            <td class="cell1">003</td>
+            <td class="cell2">Doloremque excepturi molestiae placeat quod?</td>
+            <td class="cell3">Quisquam!</td>
+            <td class="cell4">2021-12-03</td>
+            <td class="cell5">03</td>
+        </tr>
+        <tr>
+            <td class="cell1">004</td>
+            <td class="cell2">Fugit laborum provident amet. Quasi?</td>
+            <td class="cell3">Cum!</td>
+            <td class="cell4">2021-12-04</td>
+            <td class="cell5">04</td>
+        </tr>
+        <tr>
+            <td class="cell1">005</td>
+            <td class="cell2">Nulla saepe recusandae facere quia!</td>
+            <td class="cell3">Laudantium!</td>
+            <td class="cell4">2021-12-05</td>
+            <td class="cell5">05</td>
+        </tr>
+        <tr>
+            <td class="cell1">006</td>
+            <td class="cell2">Officia autem voluptas quisquam nisi?</td>
+            <td class="cell3">Dicta.</td>
+            <td class="cell4">2021-12-06</td>
+            <td class="cell5">06</td>
+        </tr>
+        <tr>
+            <td class="cell1">007</td>
+            <td class="cell2">Deserunt, enim odit? Accusantium, repellendus?</td>
+            <td class="cell3">Molestias?</td>
+            <td class="cell4">2021-12-07</td>
+            <td class="cell5">07</td>
+        </tr>
+        <tr>
+            <td class="cell1">008</td>
+            <td class="cell2">Ab, nisi? Itaque, nulla consequuntur?</td>
+            <td class="cell3">Maiores!</td>
+            <td class="cell4">2021-12-08</td>
+            <td class="cell5">08</td>
+        </tr>
+        <tr>
+            <td class="cell1">009</td>
+            <td class="cell2">Suscipit dolorum vitae distinctio adipisci.</td>
+            <td class="cell3">Sint.</td>
+            <td class="cell4">2021-12-09</td>
+            <td class="cell5">09</td>
+        </tr>
+        <tr>
+            <td class="cell1">010</td>
+            <td class="cell2">Eligendi vitae dolore unde sed?</td>
+            <td class="cell3">Iure?</td>
+            <td class="cell4">2021-12-10</td>
+            <td class="cell5">10</td>
+        </tr>
+        <tr>
+            <td class="cell1">011</td>
+            <td class="cell2">Molestias, recusandae! Rem, eum ea.</td>
+            <td class="cell3">Libero.</td>
+            <td class="cell4">2021-12-11</td>
+            <td class="cell5">11</td>
+        </tr>
+        <tr>
+            <td class="cell1">012</td>
+            <td class="cell2">Nulla tempora ex debitis aut?</td>
+            <td class="cell3">Quibusdam.</td>
+            <td class="cell4">2021-12-12</td>
+            <td class="cell5">12</td>
+        </tr>
+        <tr>
+            <td class="cell1">013</td>
+            <td class="cell2">Voluptatem quas iste ullam aliquam.</td>
+            <td class="cell3">Dolores.</td>
+            <td class="cell4">2021-12-13</td>
+            <td class="cell5">13</td>
+        </tr>
+        <tr>
+            <td class="cell1">014</td>
+            <td class="cell2">Ratione ducimus in dolorem molestias.</td>
+            <td class="cell3">Qui!</td>
+            <td class="cell4">2021-12-14</td>
+            <td class="cell5">14</td>
+        </tr>
+        <tr>
+            <td class="cell1">015</td>
+            <td class="cell2">Natus eaque non porro sint!</td>
+            <td class="cell3">Ipsam.</td>
+            <td class="cell4">2021-12-15</td>
+            <td class="cell5">15</td>
+        </tr>
+        <tr>
+            <td class="cell1">016</td>
+            <td class="cell2">Totam quos esse error illo.</td>
+            <td class="cell3">Fugit.</td>
+            <td class="cell4">2021-12-16</td>
+            <td class="cell5">16</td>
+        </tr>
+        <tr>
+            <td class="cell1">017</td>
+            <td class="cell2">Vitae quo magnam voluptatum perspiciatis?</td>
+            <td class="cell3">Deserunt.</td>
+            <td class="cell4">2021-12-17</td>
+            <td class="cell5">17</td>
+        </tr>
+        <tr>
+            <td class="cell1">018</td>
+            <td class="cell2">Dignissimos non debitis corporis repellendus.</td>
+            <td class="cell3">Itaque.</td>
+            <td class="cell4">2021-12-18</td>
+            <td class="cell5">18</td>
+        </tr>
+        <tr>
+            <td class="cell1">019</td>
+            <td class="cell2">Nostrum commodi assumenda totam debitis?</td>
+            <td class="cell3">Veritatis!</td>
+            <td class="cell4">2021-12-19</td>
+            <td class="cell5">19</td>
+        </tr>
+        <tr>
+            <td class="cell1">020</td>
+            <td class="cell2">Facere officia laboriosam in blanditiis?</td>
+            <td class="cell3">Eos.</td>
+            <td class="cell4">2021-12-20</td>
+            <td class="cell5">20</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

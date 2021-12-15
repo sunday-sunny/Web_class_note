@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* CSS 박스 모델, Box Model 
+            - 모든 태그는 사각형으로 랜더링(출력)된다.
+            - 위와 관련된 속성들을 박스 모델이라고 부른다.
+            - 태그가 화면에 출력될 때 관계되는 공통된 성질에 관한 모델(정책)
+        
+
+            1. 테두리, border
+                - 모든 태그는 자신의 영역을 가진다.
+                - 영역을 기준으로 테두리를 가진다.
+                - 영역이 반드시 사각형
+                - 일부 요소는 추가 작업없이 테두리를 시각적으로 표현.(컨트롤..)
+        */
+
+        #box2 {
+            border-color: gold;
+            border-width: 5px;
+            border-style: solid; /* 선 종류(solid, dashed, dotted) */
+        }
+
+        #box1 {
+            /* border-color: lightpink; */
+            border-top-color: lightpink;
+            border-left-color: lightpink;
+            border-right-color: lightpink;
+            border-bottom-color: rgb(53, 23, 23);
+            border-color: lightpink lightpink lightpink lightcoral;
+            border-width: 3px;
+            border-style: solid;
+        }
+
+        #box3 {
+            border: 3px solid lightslategray;
+        }
+
+        #txt1 {
+            border: 0;
+            outline: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex16_box.html -->
+
+    <h1>Box Model</h1>
+
+    <div id="box1" class="box">상자1💗</div>
+    <div id="box2" class="box">상자2💛</div>
+    <div id="box3" class="box">상자3💜</div>
+    <hr>
+
+    <input id="txt1" type="text">
+
+</body>
+</html>

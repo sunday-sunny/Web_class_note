@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .box {
+            border : 10px solid lightpink;
+        }
+
+        /* 
+            *** HTML(CSS)의 상대 크기는 부모 영역을 기준
+                (부모의 크기를 100% 기준으로 삼음)   
+                
+            *** 기본적으로 태그 높이는 상대 크기 지정 X
+                (% 사용 불가)
+
+            너비, 높이 
+            - width, height
+            - 단위(px(절대크기), %(상대크기))
+        
+
+            블럭태그와 안라인태그의 너비+높이 정책
+            
+            블럭 태그
+            1. 너비와 높이 지정 O
+            2. 기본 정책
+                a. 너비 : 100% > 조절 가능
+                b. 높이 : 콘텐츠 높이(auto) > 조절 가능
+                    - 지정 안됨 : 콘텐츠 높이에 맞게 조정
+                    - 지정함 : overflow > 상자 밖으로 넘침
+
+
+            인라인 태그
+            1. 너비와 높이 지정 X (이미지 or 폼컨트롤 제외)
+            2. 기본 정책
+                a. 너비 : 콘텐츠 너비 > 조절 불가능
+                b. 높이 : 콘텐츠 높이 > 조절 불가능
+
+
+        */
+
+        #box2 {
+            width : 50%;
+            height : 200px;
+        }
+
+
+        #b1 {
+            background-color: lightpink;
+            width: 300px;
+            height: 50px;
+        }
+
+        #s1 {
+            background-color: lightblue;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+    
+    <h1>Box Model</h1>
+
+    <div id="box1" class="box">상자1💗</div>
+    <div id="box2" class="box">상자2💛</div>
+    <div id="box3" class="box">상자3💜</div>
+    <hr>
+
+    <h1>블럭태그</h1>
+    <div id="b1">블럭태그</div>
+
+    <h1>인라인 태그</h1>
+    <span id="s1">인라인 태그</span>
+
+
+
+</body>
+</html>
