@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        main {
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+
+            /* position을 설정하면 반드시 좌표도 같이 설정 */
+            /* 사실 난 왜 0px를 줘야하는지 이해가 안가는데.. */
+            position: relative;
+            left : 0px;
+            top : 0px;
+
+            background-color: floralwhite;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: #1d3557;
+        }
+
+        #search {
+            border: 1px solid gray;
+            width: 300px;
+            height: 20px;
+            box-sizing: border-box;
+        }
+
+        #btn {
+            border: 1px solid gray;
+            height: 24px;
+        }
+
+        section {
+            padding: 30px;
+        }
+
+        #list {
+            border: 1px solid gray;
+            width: 300px;
+            background-color: white;
+            
+            position: absolute;
+            left : 226px;
+            top : 53px;
+            box-sizing: border-box;
+        }
+
+        #list .item {
+            font-size: 14px;
+            opacity: 0.8;
+            padding: 5px;
+            
+        }
+
+        #list .item:hover {
+            background-color: gray;
+        }
+
+
+    </style>
+
+
+<body>
+    <!-- ex29_position.html -->
+
+    <main>
+        <header>
+            <input type="text" id="search">
+            <input type="button" value="검색" id="btn">
+        </header>
+
+        <section>
+            <h1>title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate possimus ut necessitatibus ipsam consectetur, laborum error consequatur modi culpa magni suscipit ducimus, perspiciatis, dicta commodi corporis. Nobis deleniti magni blanditiis.</p>
+            <h1>title</h1>
+            <p>Voluptate, recusandae fuga assumenda dolores quo asperiores dolorum doloribus sunt neque quibusdam ipsum optio placeat corporis tempore ea accusantium sed, nihil non impedit, officiis facere. A saepe earum ex dolor!</p>
+            <h1>title</h1>
+            <p>Aperiam voluptatum facere praesentium id odit suscipit nemo perspiciatis velit sit nihil quas dolore minus quos ratione tempora quasi harum dicta nesciunt, culpa voluptates, molestias, expedita commodi repellendus? Qui, quaerat.</p>
+            <h1>title</h1>
+            <p>Tenetur magni suscipit sunt, vel dolores aspernatur excepturi laborum, necessitatibus accusamus quia pariatur minus nihil quo voluptatum doloremque temporibus soluta dolorem corrupti enim repellat? Veritatis repellendus quae hic vero aut.</p>
+            <h1>title</h1>
+            <p>Alias, doloremque non. Eaque, perferendis ab sunt dolorum officiis fuga unde cupiditate obcaecati, earum atque, voluptates quod aperiam totam alias quae culpa repudiandae dolores distinctio optio consequuntur mollitia! Quibusdam, cupiditate?</p>
+            <h1>title</h1>
+            <p>Impedit quae saepe vitae consequuntur assumenda, commodi repellendus cupiditate laboriosam delectus dolorem ipsa esse nobis fugiat et ut facilis numquam ducimus voluptate in ratione iure. Esse et magnam quos maxime!</p>
+            <h1>title</h1>
+            <p>Qui, iste delectus nemo quis eos recusandae amet ipsa exercitationem, laboriosam est maxime officia dicta, architecto reiciendis praesentium sed. Eos quos ullam culpa maiores voluptates provident incidunt totam praesentium. Tempora?</p>
+            <h1>title</h1>
+            <p>Esse reprehenderit enim harum magni unde pariatur eos, reiciendis officia aperiam, doloremque molestias maiores sed quidem sequi veritatis similique. Reprehenderit omnis doloribus asperiores officia, cumque distinctio labore consequuntur sunt beatae!</p>
+            <h1>title</h1>
+            <p>Modi enim quia rerum dolore tempore quos saepe quo vel, doloribus quam laboriosam delectus. Similique minus dolores odit impedit officia, alias illum, dicta eligendi, dolorum nulla eos distinctio nobis libero.</p>
+            <h1>title</h1>
+            <p>Veniam laudantium rerum aperiam blanditiis ut delectus repellat rem unde voluptatibus atque iste, quibusdam, mollitia nostrum vitae doloremque quo ab distinctio voluptas pariatur molestias obcaecati itaque? Saepe dolor commodi dignissimos.</p>
+        </section>
+        
+        <div id="list">
+            <div class="item">HTML</div>
+            <div class="item">HTML 4.01</div>
+            <div class="item">HTML 5</div>
+            <div class="item">HTML 태그</div>
+            <div class="item">HTML 속성</div>
+        </div>
+    </main>
+
+
+
+</body>
+</html>

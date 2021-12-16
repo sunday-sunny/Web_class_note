@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+            랜더링된 요소의 실제 크기(***)
+            - 너비 = width + border(좌,우) + padding(좌,우)
+            - 높이 = height + border(상,하) + padding(상,하)
+        */
+
+        .main {
+            border: 2px solid palevioletred;
+        }
+
+        #menu {
+            background-color: #d8e2dc;
+            width: 800px;
+            height: 100px;
+        }
+
+        #submenu {
+            background-color: #fec5bb;
+            width: 200px;
+            height: 300px;
+            float: left;
+        }
+
+        #content {
+            background-color: #f8edeb;
+            width: 600px;
+            height: 300px;
+            float: left;
+        }
+
+        #footer{
+            background-color: #fec89a;
+            clear: left;
+            width: 800px;
+            height: 100px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <!-- ex26_floact.html -->
+    <div class="main">
+        <div id="menu">주메뉴</div>
+        <div id="submenu">보조메뉴</div>
+        <div id="content">콘텐츠</div>
+        <div id="footer">하단</div>
+    </div>
+
+
+</body>
+</html>

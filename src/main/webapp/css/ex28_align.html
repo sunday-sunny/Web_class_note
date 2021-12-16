@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* 정렬, Alignment 
+            - 인라인 태그와 블럭 태그의 수평 정렬
+            - 정렬은 부모가 자식을 대상으로 진행 
+
+            내용물 정렬
+            1. 인라인 태그
+                - 내용물 정렬 > 불가능 > 여백이 없기 때문 > text-align X
+
+            2. 블럭 태그
+                - 내용물 정렬 > 가능 > text-align O
+
+
+            태그 자체 정렬
+            1. 인라인 태그
+                - 블럭 태그인 부모를 가져야 한다.
+                
+            2. 블럭 태그
+                - 좌우 margin 사용 
+
+        */
+
+        #s1 {
+            background-color: linen;
+        }
+
+        #d1 {
+            background-color: lightsteelblue;
+            text-align: center;
+        }
+
+        #d2 {
+            text-align: center;
+        }
+
+        #d4 {
+            background-color: mistyrose;
+            width: 30%;
+
+            /* 블럭 태그를 가운데 정렬하는 방법 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <!-- ex28_align.html -->
+    <h1>Inline Tag</h1>
+    <div id="d2">
+        <span id="s1">인라인 태그</span>
+    </div>
+
+    <h1>Block Tag</h1>
+    <div id="d1">블럭 태그</div>
+    <hr>
+
+    <div id="d4">블럭 태그</div>
+
+
+</body>
+</html>

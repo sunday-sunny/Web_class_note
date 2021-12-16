@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* 폼 선택자 
+
+        */
+
+        input {
+            margin-bottom: 10px;
+            padding : 30px;
+            outline: none;
+        }
+
+        input:required {
+            background-color: lightgoldenrodyellow;
+        }
+
+        input:optional {
+            background-color: lightgray;
+        }
+
+        input:disabled {
+            background-color: lightpink;
+        }
+
+        input:enabled {
+            background-color: lightsalmon;
+        }
+
+        input:read-only {
+            background-color: lightskyblue;
+            cursor : not-allowed;
+        }
+
+        input[type=checkbox] {
+            opacity: 0.3;
+        }
+        
+        input[type=checkbox]:checked {
+            background-color: lightskyblue;
+        }
+
+        .item {
+            border: 2px dashed lightcoral;
+            width: 250px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .item #cb2 {
+            display: none;
+        }
+
+        .item label {
+            font-size: 1.5em;
+            font-family: 'Times New Roman', Times, serif;
+            display: block;
+            padding: 10px 0px;
+            cursor: pointer;
+        }
+
+        .item div {
+            border-top: 2px dashed lightcoral;
+            padding-top: 10px;
+            display: none;
+        }
+
+        #cb2:checked ~ div {
+            display: block;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <!-- ex35_selector.html -->
+
+    <div><input type="text" required></div>
+    <div><input type="text" readonly></div>
+    <div><input type="text" disabled></div>
+    <div><input type="text" required></div>
+    <div><input type="text" disabled></div>
+    <div><input type="text"></div>
+    <div><input type="text" required></div>
+    <div><input type="text"></div>
+    <div><input type="text"></div>
+    <div><input type="text"></div>
+    <hr>
+
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <hr>
+
+    <h1>Contents</h1>
+
+    <div class="item">
+        <input type="checkbox" id="cb2">
+        <label for="cb2">HyperText Markup Language</label>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus laudantium dolorum molestiae amet vitae neque temporibus sunt nulla aliquam possimus error mollitia eveniet debitis placeat asperiores quia repudiandae, esse aut.</div>
+    </div>
+
+    <br/><br><br><br><br>
+        
+    </body>
+</html>

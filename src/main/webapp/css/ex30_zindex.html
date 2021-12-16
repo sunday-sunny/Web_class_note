@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        #box1 {background-color: lightpink;}
+        #box2 {background-color: lightgoldenrodyellow;}
+        #box3 {background-color: lightskyblue;}
+
+        #box 1{
+            /* postion이 static이면 z-index가 먹히지 않는다. */
+            z-index: 3;
+        }
+
+        #box2 {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+            z-index: 10;
+        }
+
+        #box3 {
+            position: absolute;
+            left: 350px;
+            top: 350px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- ex30_zindex.html -->
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+</body>
+</html>

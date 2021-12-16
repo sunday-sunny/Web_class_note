@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* float
+            - 기존의 출력 정책을 깨고, 혼자 자신의 위치에서 벗어나서 현재 라인의 좌측(우측) 끝으로 이동한다.
+        
+        */
+        span{
+            color: palevioletred;
+            font-weight: bold;
+            float: left;
+        }
+
+        p > img {
+            float: left;
+            margin: 20px;
+        }
+
+        #title{
+            /* text-decoration: underline dashed palevioletred 3px; */
+            border-bottom: 2px dashed palevioletred;
+            width: 400px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            /* display: inline-block; */
+            float: left;
+        }
+
+        #box1 {background-color: lightpink;}
+        #box2 {background-color: lightgray;}
+        #box3 {background-color: lightskyblue;}
+        #box4 {background-color: lightyellow;}
+        #box5 {background-color: lightslategrey;}
+
+    </style>
+
+
+</head>
+<body>
+    <h1 id="title">CSS Property <small>floact</small></h1>
+
+
+    <div>
+        <p>
+            <img src="../images/cat01.jpg">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, maiores earum! Architecto, nihil veritatis optio assumenda molestiae ex debitis nostrum  eligendi dolorum ipsam earum aperiam aspernatur placeat minus in animi.
+            Optio consequatur omnis ducimus incidunt provident reiciendis esse, tempore voluptatibus cupiditate accusamus ut quidem enim voluptatem a, ipsum quis nobis? Hic accusantium voluptate dolore in autem quod sunt dolor magni! <span>Sunny Side Up!</span>
+            Animi, facilis! Architecto doloremque nisi commodi recusandae minus? Delectus consequuntur distinctio iure quaerat vitae sapiente illum! Quae ducimus nemo officiis! Adipisci quam illo, praesentium mollitia deleniti vitae amet autem consequatur.
+            Eveniet deserunt error recusandae aliquid, tempora ipsum consequatur enim, fugiat nesciunt perspiciatis omnis id! Nostrum, sequi quam consectetur possimus, dolores illo rerum ipsam quas nam illum temporibus error est tempora.
+            Animi suscipit dicta eaque unde fugit amet nisi. Repudiandae quod ipsum pariatur error, modi quia rem sed doloribus accusamus? Beatae rem necessitatibus ab aspernatur? Reprehenderit repellendus quisquam sunt assumenda eveniet.
+        </p>
+    </div>
+    <hr>
+
+    <h1>floact</h1>
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    <!-- 여기서부터 새로운 라인으로 시작 -->
+    <div style="clear:both;">또 다른 내용 작성</div>
+
+</body>
+</html>
