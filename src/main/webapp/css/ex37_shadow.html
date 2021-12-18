@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+        .box {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        /*개체 간의 중첩된 marign은 합이 아니라, 큰 마진이 적용 */
+        #box1 { background-color: skyblue;}
+        #box2 { background-color: slateblue;}
+        #box3 { background-color: lightyellow;}
+
+
+        /* Shadow, 그림자 
+            - 블럭태그, 인라인태그, 그림자 효과
+            1. text-shadow : x y blur color
+            2. box-shadow : 2px 2px 3px black
+        */
+
+        #box1 {
+            box-shadow: 2px 2px 10px #999;
+            text-shadow: 5px 5px 3px white;
+        }
+
+        span:first-child {
+            color: lightskyblue;
+            background-color: lightyellow;
+            font-weight: 600;
+            box-shadow: 2px 2px 3px #999;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex37_shadow.html -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <hr>
+
+    <p>안녕하세요 <span>써니</span>입니다! 오늘은 수업 끝나고 <span>김뜻돌</span> 공연을 보러가요>-<</p>
+
+</body>
+</html>

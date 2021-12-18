@@ -1,0 +1,88 @@
+.weather {
+  width: 590px;
+  height: 220px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.weather__title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0px;
+  padding: 0px 30px;
+}
+
+.weather__contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.weather__content:last-child {
+  border-right: none;
+}
+
+.weather__week {
+  display: flex;
+  font-size: 13px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.weather__date {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 3px;
+}
+
+.weather__content:first-child .weather__date {
+  background-color: #00c63c;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0px 5px;
+  border-radius: 10px;
+}
+
+.weather__contents img {
+  width: 30px;
+  height: 30px;
+}
+
+.weather__day,
+.weather__night {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.weather__day span,
+.weather__night span {
+  padding-left: 7px;
+}
+
+.weather__content:first-child .weather__day,
+.weather__content:first-child .weather__night,
+.weather__content:nth-child(2) .weather__day,
+.weather__content:nth-child(4) .weather__night,
+.weather__content:last-child .weather__night {
+  color: #41b5ee;
+}
+
+.weather__temper {
+  font-size: 13px;
+  font-weight: 600;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* 전후 선택자 
+            1. ::before
+            2. ::after
+
+            전후 선택자에서 사용하는 CSS 구성 요소
+            - content 속성의 값
+            1. none
+            2. 문자열
+            3. attr(속성)
+            4. open-quote
+            5. close-quote
+
+        */
+        span {
+            color :slateblue;
+        }
+
+        span:before {
+            content : '🥱';
+            font-size: 1.5em;
+        }
+
+        span::after {
+            content : '😪';
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        #box1 { background-color: skyblue;}
+        #box2 { background-color: slateblue;}
+        #box3 { background-color: lightpink}
+        #box4 { background-color: lightgoldenrodyellow;}
+
+        /* float 성질을 제거하는 clear 속성은 블럭태그에만 적용 가능 */
+        /* flex를 사용하면 돼서... */
+        /* #box3::after {
+            content: '';
+            display: block;
+            clear: both;
+        } */
+        
+        .box-list {
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ex36_selector.html -->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non cumque aperiam quasi laboriosam quo dicta, ipsa enim quas facilis suscipit voluptate nulla accusamus <span>ducimus eaque voluptas</span> quisquam sequi odit deserunt aspernatur ut! Exercitationem libero iusto vel, sequi id natus nobis corporis temporibus dolorem adipisci dolores perspiciatis quas molestias placeat saepe eaque quis. Nemo <span>doloremque praesentium assumenda</span> beatae minima unde aspernatur fuga qui! Nam, molestiae iusto nostrum illo, recusandae <span>praesentium laborum, omnis veniam</span> repellat ipsum explicabo suscipit facere. Optio blanditiis ad obcaecati, eaque perspiciatis amet qui in corporis nihil non nam quia beatae placeat iste ex eius quibusdam labore unde numquam?</p>
+    <hr>
+
+    <div class="box-list">
+        <div id="box1" class="box">상자1</div>
+        <div id="box2" class="box">상자2</div>
+        <div id="box3" class="box">상자3</div>
+    </div>
+        
+    <div id="box4" class="box">상자4</div>
+
+
+</body>
+</html>

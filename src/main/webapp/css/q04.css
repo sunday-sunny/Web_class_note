@@ -1,0 +1,44 @@
+table {
+  width: 800px;
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+}
+
+tr,
+th,
+td {
+  border: 1px solid #cccccc;
+  font-size: 15px;
+  padding: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+th {
+  background-color: #dddddd;
+}
+
+tr td:last-child {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.table__header-no {
+  width: 60px;
+}
+
+.table__header-name {
+  width: 90px;
+}
+
+.table__header-age {
+  width: 60px;
+}
+
+.table__header-id {
+  width: 105px;
+}
+
+.table__header-description {
+  width: 485px;
+}

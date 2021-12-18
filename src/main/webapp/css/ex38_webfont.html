@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+            웹 폰트, Web Font
+            - 서버상의 폰트를 클라이언트에게 실시간 제공
+            - 클라이언트 PC에 폰트 설치X 
+
+            - Goole font
+            - 눈누(무료 한글 폰트 스트리밍 사이트)
+        */
+
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap');
+        
+        @font-face {
+            font-family: 'Cafe24SsurroundAir';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        /* 웹 폰트 선언 */
+        @font-face {
+            font-family: jeju;
+            src: url(../images/JejuHallasan.ttf);
+        }
+
+        #p1 {
+            font-family: jeju;
+        }
+
+        #p2{
+            font-family: 'Source Code Pro', monospace;
+        }
+
+
+        #p3 {
+            font-family: Cafe24SsurroundAir;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex38_webfont.html -->
+
+    <p id="p1">With each passing year, TikTok’s musical appetite seems to get larger—it really feels like anything can blow up now. Within the first weeks of 2021, scholars specializing in 18th- and 19th-century maritime work songs found themselves in unusual demand after a Scottish postman kicked off a global fascination with, of all things, sea shanties. Other sounds that became wildly popular on the app this year include: the preschool-friendly soundtrack to the Nickelodeon animated show The Backyardigans, Inuit throat singing, Vietnamese electronic music, and absolutely foul mash-ups in which snippets from Chicago rapper CupcakKe’s song “Vagina” (i.e., “slurp that dick 'til it cum”) are sneakily inserted into otherwise innocent pop songs. Masses of millennial indie music heads wistfully thought to themselves the kids are all right after cult faves Life Without Buildings and then the Mountain Goats trended. TikTok contains so many surprises nowadays that nothing is truly surprising.</p>
+
+    <p id="p2">The following is a recap of music-related trends and news I found intriguing, cool, or just plain weird from this year, mostly focusing on subjects I haven’t already covered in my regular TikTok column.</p>
+
+    <p id="p3">In late August, a 23-year-old indie folk singer from Winnipeg, Manitoba named Leith Ross teased a draft of song called “We’ll Never Have Sex.” In the TikTok clip, Ross picks at an acoustic guitar and sings quietly, their eyes closed the entire time. “Depollute me, pretty baby/Suck the rot right out of my bloodstream,” they murmur, cherishing the goodness of a love with no ulterior motives behind it. “Oh you kissed me just to kiss me/Not to take me home.” For such a stark and humble song, it got an unusual amount of attention: The original video has been liked 1.1 million times. While an official version of “We’ll Never Have Sex” has not been released, over 33,000 videos have been made to Ross’ unfinished snippet.</p>
+
+</body>
+</html>
