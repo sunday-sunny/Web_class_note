@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            border: 2px solid lightpink;
+            width: 800px;
+        }
+
+        .box {
+            width: 100px;
+            height: 50px;
+            margin: 15px 0px;
+            transition : width 1s ease-in-out;
+            transition-delay: 1s;
+        }
+        
+        /* #box1 { background-color: lightpink; transition-timing-function: linear;}
+        #box2 { background-color: lightpink; transition-timing-function: ease;}
+        #box3 { background-color: lightpink; transition-timing-function: ease-in;}
+        #box4 { background-color: lightpink; transition-timing-function: ease-out;}
+        #box5 { background-color: lightpink; transition-timing-function: ease-in-out;} */
+        
+        #box1 { background-color: lightpink; transition-delay: 0s;}
+        #box2 { background-color: lightpink; transition-delay: 0.2s;}
+        #box3 { background-color: lightpink; transition-delay: 0.4s;}
+        #box4 { background-color: lightpink; transition-delay: 0.6s;}
+        #box5 { background-color: lightpink; transition-delay: 0.8;}
+
+        #list:hover .box {
+            width: 600px;
+        }
+
+        #box {
+            border: 2px solid lightskyblue;
+            width: 100px;
+            height : 100px;
+            margin-top: 20px;
+            padding : 5px;
+            overflow: hidden;
+        }
+
+        #content {
+            background-color: lightsteelblue;
+            transform: translate(0px, -20px);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="list">
+        <div id="box1" class="box">linear</div>
+        <div id="box2" class="box">ease(default)</div>
+        <div id="box3" class="box">ease-in</div>
+        <div id="box4" class="box">ease-out</div>
+        <div id="box5" class="box">ease-in-out</div>
+    </div>
+
+
+    <div id="box">
+        <div id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, maxime? Vero, enim? Ea nam ex, dolorem, delectus error earum asperiores molestias necessitatibus adipisci minus doloremque neque iure. Cum, eum quo!</div>
+    </div>
+</body>
+</html>

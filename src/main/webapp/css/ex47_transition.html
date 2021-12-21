@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 3px solid lightpink;
+            width: 200px;
+            height: 200px;
+            background-color: mistyrose;
+            text-align: center;
+
+            color: lightcoral;
+            font-weight: 600;            
+            /* transition, 전환
+                - 객체의 속성(상태)값이 변화되는 과정을 시간 순서대로 보여주는 속성
+                - 수치형 속성에만 적용 가능(숫자, 색상)
+            */
+            transition: all 0.5s ease-in-out;
+        
+        }
+
+
+        #box:hover{
+            /* width: 400px; */
+            /* height: 300px; */
+            transform: rotate(180deg);
+        }
+
+        #cat > img {
+            transition : all 0.3s ease-in-out;
+        }
+
+        #cat > img:hover {
+            /* transform : translate(0px, -30px); */
+            /* transform: scale(1.3, 1.3); */
+            /* transform:  scale(-1, 1); */
+            transform: rotate(45deg);
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- ex47_transition.html -->
+
+    <div id="box">I have computer system capacity only 1.8G...</div>
+
+    <h1>Cat</h1>
+    <div id="cat">
+        <img src="../images/catty01.png" alt="">
+        <img src="../images/catty02.png" alt="">
+        <img src="../images/catty03.png" alt="">
+        <img src="../images/catty04.png" alt="">
+        <img src="../images/catty05.png" alt="">
+    </div>
+
+
+</body>
+</html>

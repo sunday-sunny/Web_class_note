@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #menu {
+            width: 630px;
+            margin: 0px auto;
+
+            /* position 주는 순간 margin 안 먹음..! */
+            position: fixed;
+            top:0px;
+
+            /* left, rignt 0을 둘 다 주면 가운데 정렬이 됨!! (***) */
+            left:0px;
+            right:0px;
+
+            /* 메뉴를 평소에는 숨겨두기 위해 y축으로 -100px */
+            transform: translate(0px, -100px);
+
+        }
+
+        #menu::after {
+            content : '';
+            display: block;
+            clear: both;
+        }
+
+        #menu img {
+            float: left;
+        }
+
+        #menu img:hover {
+            transform:  translate(0px, 90px);
+        }
+
+
+        #submenu {
+            width: 126px;
+            margin: 0px auto;
+            position : fixed;
+            transform: translate(-100px, 0px);
+
+        }
+
+        #submenu img {
+            float : left;
+        }
+
+        #submenu::after {
+            content : '';
+            display: block;
+            clear: both;
+        }
+
+        #submenu img:hover {
+            transform: translate(100px, 0px);
+        }
+
+        input {
+            width: 500px;
+            font-size: 2em;
+            transform: rotate(180deg);
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <!-- ex46_transform.html -->
+
+    <nav id="menu">
+        <img src="../images/rect_icon01.png" alt="">
+        <img src="../images/rect_icon02.png" alt="">
+        <img src="../images/rect_icon03.png" alt="">
+        <img src="../images/rect_icon04.png" alt="">
+        <img src="../images/rect_icon05.png" alt="">
+        <!-- <div style="clear:both"></div> -->
+    </nav>
+    
+    <nav id="submenu">
+        <img src="../images/rect_icon01.png" alt="">
+        <img src="../images/rect_icon02.png" alt="">
+        <img src="../images/rect_icon03.png" alt="">
+        <img src="../images/rect_icon04.png" alt="">
+        <img src="../images/rect_icon05.png" alt="">
+        <!-- <div style="clear:both"></div> -->
+    </nav>
+
+    <h1>Title</h1>
+    <input type="text">
+
+    <p>
+        1. img는 인라인 태그라 img 사이에 공백(white space)가 들어가서 공백이 생긴 것
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos nesciunt sit, laboriosam dolorem, a delectus iusto mollitia molestias ducimus, earum placeat voluptates veritatis dignissimos aperiam expedita optio eum nisi excepturi!</p>
+    <p>Cum veniam laboriosam excepturi nihil laborum odit, soluta amet eius veritatis beatae dolore quae fugiat a delectus odio fugit exercitationem, quisquam quam ipsam neque adipisci corrupti! Assumenda natus aperiam quo.</p>
+    <p>Molestias, doloribus reprehenderit architecto reiciendis nihil voluptas fugit amet itaque voluptate. Quod quia ipsam quaerat molestiae voluptatibus sint aliquam at? Dolores rem expedita deserunt maxime vitae laboriosam, tempore error inventore.</p>
+    <p>Libero fuga dolorem corporis deserunt maiores eaque quas nulla velit perferendis dignissimos debitis, pariatur in illo consectetur, iusto eos similique. Ea aspernatur dolore facilis iste quod nulla accusantium, quis aut?</p>
+    
+</body>
+</html>

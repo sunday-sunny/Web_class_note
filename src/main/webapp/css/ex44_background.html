@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 3px solid lightcoral;
+            width: 350px;
+            height: 150px;
+            margin: 20px;
+        }
+        /* 배경색 
+            1. solid 
+            2. gradient color : 색의 변화를 시각으로 펴현
+                - 선형
+                - 원형
+        */
+
+        #box1 {
+            /* background: linear-gradient(to right, lightblue, lightcoral); */
+            background: linear-gradient(90deg, lightblue, lightcoral);
+            background: linear-gradient(to right, lightblue, rgba(0,0,0,0));
+        }
+
+        #box2 {
+            background: radial-gradient(lightblue, lightcoral);
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex44_background.html -->
+    <div id="box1" class="box"></div>
+    <div id="box2" class="box"></div>
+
+</body>
+</html>

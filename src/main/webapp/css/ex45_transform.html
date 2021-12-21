@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 3px solid lightcoral;
+            border-radius: 10%;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+        }
+
+        /* Transform, 변형 
+            - 객체의 위치, 크기(배율), 회전, 왜곡
+
+            속성 함수
+            1. translate() : 위치 변형, position 유사
+            2. scale()  : 배율 변형(확대, 축소)
+            3. rotate() : 회전 변형
+            -----------------------------------------
+            4. skew()   : 왜곡 변형(비틀기) 
+            5. matrix() : 1~4 직접 정의. 사용자 정의형. 행렬
+        */
+
+        #box1 {
+            background-color: gold;
+
+            /* x축의 변화는 세로축을 기반으로 회전 : -1을 하면 뒤집어짐
+               Y축의 변화는 가로축을 기반으로 회전 : -1를 하면 뒤집어짐 */
+            /* transform: scale(-1,-1); */
+            
+            
+            /* 변형 중심축 */
+            /* transform-origin: 200px 200px; */
+        }
+        
+        #box1:hover {
+            /* transform: translate(100px, 100px); */
+            /* transform: rotate(15deg); */
+            
+            /* transform: scale(1.5, 1.5) rotate(25deg) translate(0px, -20px); */
+            transform: skew(15deg, 0deg);
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- ex45_transform.html -->
+
+    <h1>Box</h1>
+    
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+</body>
+</html>
