@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        
+        /* 스코프, Scope
+            - 변수의 생명주기 
+            - 변수의 영역
+
+            자바
+            1. 멤버 변수 > 클래스 전역
+            2. 지역 변수 > 메소드 전역 or 제어문 전역
+            
+            자바스크립트
+            1. 전역 변수 > 페이지 전체(전역) > HTML 한페이지내에서 사용
+                - 선언문 실행 ~ 페이지 종료
+            2. 지역 변수 > 함수 전역(O) or 제어문 전역(X)
+
+
+            (***) 자바스크립트 특징
+            - 변수, 함수 > 동일한 식별자 선언시 > 덮어쓰기 > 매우 조심!!!
+            - var 선언 없이 변수 선언 가능 > 선언 위치와 상관없이 무조건 전역 변수
+                - 절대 사용 금지!! 생명주기 추적에 어렵다(***)
+                - 결론 : 변수는 반드시 선언문을 사용해서 선언
+
+        */
+
+        // Example 1 
+        var a = 10; // 전역 변수(페이지 전체에서 사용)
+
+        function m1() {
+            var b = 20; // 함수 지역 변수
+            console.log(b);
+
+            if(b > 0) {
+                var c = 30;
+                console.log(c);
+            }
+            // 변수는 제어문을 자신의 블럭으로 인식하지 않음 > 함수만을 인정
+            console.log(c); // OK 
+        }
+
+        m1();
+        //console.log(b); // Error! 
+
+
+        // Example 2 
+        var num1 = 10;
+        num2 = 20 
+
+        function m2() {
+            var num3 = 30;
+            num4 = 40; // 선언 위치와 상관없이 무조건 전역 변수가 된다.
+
+            console.log(num3);
+            console.log(num4);
+        }
+
+        m2();
+        console.log(num3);
+
+    </script>
+
+</head>
+<body>
+    <!-- ex05_scope.html -->
+    <h1>JavaScript Variable</h1>
+    <script>
+        console.log(a);
+    </script>
+</body>
+</html>

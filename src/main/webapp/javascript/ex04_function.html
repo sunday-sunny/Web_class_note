@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* Java Method
+            public [static] int m1(int num) {
+                return 1;
+            }
+
+            JavaScript Function
+            m1(num) {
+                return 10;
+            }
+    
+        */
+
+        function m1() {
+            console.log('m1');
+        }
+        m1();
+
+
+        function m2(name) {
+            console.log('name: ' + name);
+        }
+
+        m2('써니');
+
+
+        function m3(item1, item2) {
+            console.log('m3');
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments); // 내장 배열
+            
+            console.log(item1, item2); // 권장(기존 방식)
+        }
+        m3('HTML', 'CSS');
+
+
+        function m4() {
+            return 100;
+        }
+
+        console.log(m4());
+
+        // -----------------------------------------------------
+
+        // undefined > (변수 선언 후) 초기화를 하지 않은 상태
+        // null > 명시적으로 비어있는 상태
+
+        var num;
+        console.log(num);
+        
+        num = null;
+        console.log(num);
+
+        // 연산자
+        console.log(100 == '100');  // 자료형 비교를 안 하는 비교연산자
+        console.log(100 === '100'); // 비교연산자
+
+        console.log(100 != '100');
+        console.log(100 !== '100');
+
+    </script>
+
+
+</head>
+<body>
+    <!-- ex04_function.html -->
+</body>
+</html>

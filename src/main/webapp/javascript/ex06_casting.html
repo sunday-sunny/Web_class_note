@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        
+        /*  형변환, Type Casting
+            1. int parseInt(value)
+            2. float parseFloat(value)
+        */
+
+        var n1 = 3.14;
+        console.log(parseInt(n1)); // 실수 -> 정수 
+
+        var n2 = '300';
+        console.log(parseInt(n2)); // 문자열 -> 정수
+
+        var n3 = '100점';
+        console.log(parseInt(n3));
+
+        var n4 = '스코어50';
+        console.log(parseInt(n4)); //NaN > Not a number
+
+        var n5 = '100점이 아니라 50점입니닷.';
+        console.log(parseInt(n5));
+
+        // JavaScript -> HTML, CSS 조작
+        var width = '200px';
+        console.log(width + 100);
+        console.log(parseInt(width) + 100);
+
+        var size = '1.5em';
+        console.log(parseFloat(size) * 2);
+
+        // boolean inNaN(value)
+        // - value가 숫자가 아니냐?
+        var age = '20세';
+        console.log(isNaN(age));
+
+        
+
+    </script>
+    
+    <title>Document</title>
+
+
+
+</head>
+<body>
+    <!-- ex06_casting.html -->
+</body>
+</html>

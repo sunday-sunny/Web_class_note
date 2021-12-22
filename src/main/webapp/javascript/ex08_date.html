@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 날짜 시간
+            - Date 객체
+            - object형 */
+
+        // 현재 시각
+        var now = new Date(); // new 생성자함수();
+        console.log(now);
+
+        // 요소 추출
+        // - c.get(Calendar.YEAR)
+        console.log(now.getYear());
+        console.log(now.getFullYear());
+        console.log(now.getMonth());
+        console.log(now.getDate());
+        console.log(now.getDay()); // 요일(일(0) ~ 토(6))
+        console.log(now.getHours());
+        console.log(now.getMinutes());
+        console.log(now.getSeconds());
+        console.log(now.getMilliseconds());
+        console.log(now.getTime()); // 틱(ms)
+        console.log(now.getUTCHours()); // 시(UTC == GMT) GTM+9
+
+        // 출력 > %tF, %tT, %tA 등..
+        console.log(now);
+        console.log(now.toString());
+        console.log(now.toLocaleString()); // 2021. 12. 22. 오후 3:23:51
+        console.log(now.toDateString()); // Wed Dec 22 2021
+        console.log(now.toLocaleDateString()); // 2021. 12. 22.
+        console.log(now.toTimeString()); // 15:24:47 GMT+0900 (한국 표준시)
+        console.log(now.toLocaleTimeString()); // 오후 3:24:47
+
+        // 특정 시각 만들기
+        var christmas = new Date();
+        christmas.setFullYear(2021);
+        christmas.setMonth(11);
+        christmas.setDate(25);
+
+        console.log(christmas.toLocaleString());
+
+
+        var birthday = new Date(1995, 11, 22);
+        console.log(birthday.toLocaleString());
+
+        // 연산
+        console.log(christmas - now); // ms
+        console.log(christmas.getTime() - now.getTime());
+
+        console.log((christmas - now) / 1000 / 60 / 60 / 24);
+
+        // 시각 + 시간
+        // 오늘 만난 커플 100일 기념일?
+        console.log(now.getTime() + (100 * 1000 * 60 * 60 * 24));
+        console.log(now.getTime() + 100);
+
+        var ani = new Date();
+        ani.setTime(now.getTime() + (100 * 1000 * 60 * 60 * 24));
+        console.log(ani);
+
+
+    </script>
+</head>
+<body>
+    <!-- ex08_date.html -->
+</body>
+</html>
