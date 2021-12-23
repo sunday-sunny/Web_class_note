@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form > input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex15_attribute.html -->
+    <h1>JavaScript로 태그의 속성 제어하기</h1>
+
+    <form action="" name="form1">
+        <input type="text" name="txt1">
+        <input type="button" name="btn1" value="클릭">
+        <hr>
+
+        <input type="password" name="pw1">
+        <input type="button" name="btn2" value="암호보이기">        
+    </form>
+    
+    <script>
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+        
+        var pw1 = window.document.form1.pw1;
+        var btn2 = window.document.form1.btn2;
+
+        btn1.onclick = m1;
+
+        function m1() {
+            // txt1의 속성 제어
+            // HTML 태그의 속성 제어
+            // - HTML 태그의 속성명과 동일한 JavaScript 프로퍼티를 제공
+            // - 그 프로퍼티는 대부분 읽기/쓰기를 지원(일부 읽기 전용 or 쓰기 전용)
+            // - HTML 태그의 속성명이 JavaScript 프로퍼티명으로 적합하지 않거나, 2단어 이상의 조합이면 캐멀 표기법을 사용한 프로퍼티 제공
+            // - 태그의 식별자나 근본적인 속성은 수정하지 않는다.
+
+            txt1.size = 50;
+            txt1.value = 'Sunny';
+
+            /* 속성값 패턴 */
+            // 1. HTML(숫자) > JavaScript(숫자)
+            txt1.size = 10;  
+            
+            // 2. HTML(열거형) > JavaScript(문자열)
+            // p1.align = 'center';
+
+            // 3. HTML(색상) > JavaScript(문자열)
+            window.document.body.bgColor = 'lightblue';
+
+            // 4. HTML(플래그) > JavaScript(boolean)
+            // txt1.readOnly = true;
+            txt1.readOnly = !txt1.readOnly; // on,off > Toggle type
+
+            // 5. HTML(문자열) > JavaScript(문자열)
+            txt1.value = 'Hi I\'m Summy';
+
+        }
+        
+        btn2.onclick = m2;
+        function m2() {
+
+            if(pw1.type == 'password'){
+                pw1.type = 'text';
+                btn2.value = '암호감추기';
+            }
+            else {
+                pw1.type = 'password';
+                btn2.value = '암호보이기';
+            }
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q15</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <h1>데이터 입력</h1>
+
+    <form action="" name="form1">
+        이름 :
+        <input type="text" name="txt1"><br/>
+        나이 :
+        <input type="text" name="txt2"><br/>
+        별명 : 
+        <input type="text" name="txt3"><br/>
+        <button type="button" name="btn1">Long</button>
+        <button type="button" name="btn2">Short</button>
+    </form>
+
+    <script>
+        var btn1 = window.document.form1.btn1;
+        var btn2 = window.document.form1.btn2;
+
+        var txt1 = window.document.form1.txt1;
+        var txt2 = window.document.form1.txt2;
+        var txt3 = window.document.form1.txt3;
+        
+        btn1.onclick = beLong;
+        btn2.onclick = beShort;
+
+        function beLong() {
+            txt1.size = 30;
+            txt2.size = 30;
+            txt3.size = 30;
+        }
+
+        function beShort() {
+            txt1.size = 10;
+            txt2.size = 10; 
+            txt3.size = 10;
+        }
+
+    </script>
+</body>
+</html>

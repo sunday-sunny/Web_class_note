@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* div {
+            margin-bottom: 10px;
+        } */
+
+        input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+    </style>
+    <script>
+        /* JavaScript로 하는 일 중 가장 흔한 행동
+            1. 태그 검색
+            2. 이벤트 등록
+                - 정적
+                - 동적
+            3. 이벤트 발생
+
+
+            onXXX
+            - 이벤트
+            - 정적 > 이벤트 핸들러(Event Handler)
+            - 동적 > 이벤트 프로퍼티(Event Property)
+
+            - onclick
+            - onmouseover
+            - onscroll
+            - *** 이 사건이 어떤 상황에서 발생하는지!
+        
+        */
+    </script>
+</head>
+<body>
+    <!-- ex11_event.html -->
+
+    <h1>Event</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1" >
+        <input type="button" name="btn1" value="버튼1">
+        <input type="button" name="btn2" value="버튼2" onclick="m2();">
+    </form>
+
+
+    <script>
+        // 1. 버튼검색
+        var btn1 = window.document.form1.btn1;
+
+        // 2. 이벤트 등록
+        // - btn1을 클릭하면 m1 함수를 호출하시오.
+        window.document.form1.btn1.onclick = m1;
+        
+        function m1() {
+            var now = new Date();
+            var time = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+
+            // 태그 검색
+            window.document.form1.txt1.value = time;
+        }
+
+        function m2() {
+            var now = new Date();
+            var date = now.getDate();
+            window.document.form1.txt1.value = date;
+        }
+        
+    </script>
+
+</body>
+</html>

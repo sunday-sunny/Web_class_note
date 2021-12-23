@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea, 
+        input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex12_mouse.html -->
+    <h1>Mouse Event</h1>
+
+    <form action="" name="form1">
+        <textarea name="txt1" id="" cols="30" rows="10"></textarea>
+        <input type="button" value="버튼1" name="btn1">
+    </form>
+    
+    <script>
+        /* 마우스 관련 이벤트
+            - onmouseXXX
+            1. onmouseover(onmouseenter) : 해당 객체 영역 위에 마우스 커서가 진입하는 순간
+            2. onmouseout(onmouseleave) : 해당 객체 영역에서 마우스 커서가 벗어나는 순간
+            3. onmousedown
+            4. onmouseup
+            5. onmousemove
+        */
+
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+
+        txt1.onmouseover = m1;
+        txt1.onmouseout = m2;
+        txt1.onmousedown = m3;
+        txt1.onmouseup = m4;
+
+        function m1() {
+            window.document.body.bgColor = 'lightpink';            
+        }
+        
+        function m2() {
+            window.document.body.bgColor = 'snow';
+        }
+        
+        function m3() {
+            window.document.body.bgColor = 'lightgrey';
+            
+            /* 버튼의 종류 > event.buttons */
+            txt1.value ='마우스 다운 : ' + event.buttons;
+            if(event.buttons == 2)
+                alert('오른쪽 버튼 클릭 금지!');
+
+            /* 마우스 커서 좌표 
+                1. x, y
+                - 문서 좌측 상단을 기준
+                - 비표준(MS)
+
+                2. clientX, clientY
+                - 문서 좌측 상단 기준
+                - 표준 > 권장
+
+                3. screenX, screenY
+                - 모니터 좌측 상단 기준
+                - 사용 부담
+                
+                4. offsetX, offsetY
+                - 이벤트 발생된 객체의 좌측 상단 기준
+                - 상대(=relative)
+
+            */
+            // txt1.value = event.x + ',' + event.y;
+            // txt1.value = event.clientX + ',' + event.clientY;
+            // txt1.value = event.screenX + ',' + event.screenY;
+            txt1.value = event.offsetX + ',' + event.offsetY;
+
+        }
+        
+        function m4() {
+            window.document.body.bgColor = 'lightblue';
+        }
+
+        btn1.onmouseover = f1;
+        btn1.onmouseout = f2;
+
+        function f1() {
+            btn1.value = 'Button';
+        }
+
+        function f2() { 
+            btn1.value = '버튼1';
+        }
+
+
+    </script>
+
+</body>
+</html>

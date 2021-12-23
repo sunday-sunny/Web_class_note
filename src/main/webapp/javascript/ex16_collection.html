@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex16_collection.html -->
+
+    <h1>이미지</h1>
+    <img alt="" src="../images/catty01.png">
+    <img alt="" src="../images/catty02.png">
+    <img alt="" src="../images/catty03.png">
+    <img alt="" src="../images/catty04.png">
+    <img alt="" src="../images/catty05.png">
+
+    <h1>링크</h1>
+    <a href="https://naver.com">네이버</a> 
+    <a name="#top">위로</a>
+    <a href="https://google.com">구글</a> 
+    <a name="#bottom">아래로</a>
+    <a href="https://daum.net">다음</a> 
+
+    <h1>폼</h1>
+    
+    <fieldset>
+        <legend>컨트롤 3개</legend>
+        <form action="" name="form1">
+            <input type="text">
+            <input type="password" name="" id="">
+            <input type="button" value="Button">
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>컨트롤 1개</legend>
+        <form action="" name="form2">
+            <label for="">Check: </label>
+            <input type="checkbox" name="" id="">
+        </form>
+    </fieldset>
+
+
+    <script>
+        /*  Collection
+            - 문서 내용을 기반으로 자동 생성되는 배열을 제공한다.
+            1. window.document.images : 문서상의 모든 <img> 태그
+            2. window.document.links : 문서상의 모든 <a href=""> 태그 
+            3. window.document.anchors : 문서상의 모든 <a name=""> 태그
+            4. window.document.forms : 문서상의 모든 <form> 태그
+            5. window.document.forms[index].elements : 특정 폼의 모든 하위 입력 태그
+            6. window.document.all : 비표준(MS) 문서상의 모든 태그
+        */
+
+
+        // console.log(window.document.images.length);
+        window.document.images[0].width = 200;
+        console.log(window.document.links.length);
+        console.log(window.document.anchors.length);
+
+        window.document.form1.txt1
+        window.document.forms[0].txt1
+
+        console.log(window.document.form1.elements.length);
+        console.log(window.document.forms[1].elements.length);
+
+        for(var i = 0; i < window.document.form1.elements.length; i++) {
+            console.log(window.document.form1.elements[i].type);
+        }
+
+        // BOM 모델에 속해있지 않은 태그들을 접근 하더라도 조작할 수 있는 프로퍼티가 수가 적다 > 그다지 사용하지 않는다.
+        console.log(window.document.all[0].nodeName);
+
+    </script>
+
+
+</body>
+
+
+</html>

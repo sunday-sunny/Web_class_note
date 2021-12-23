@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  
+            JavaScript가 HTML 문서를 해석 + 조작하는 방식(모델)
+            - 둘 다 트리구조
+
+
+            1. BOM, Browser Object Model
+                - 초창기 모델
+                - 현재까지 계속 사용
+                - 정적 모델
+                - 선택적 모델 > 일부 태그만 모델화 > 일부 태그만 조작 > 조작 한계(***)
+
+            2. DOM, Document Object Model
+                - 발전 모델
+                - 현재까지 계속 사용
+                - 동적 모델
+                - 전역 모델 > 모든 태그 모델화 > 모든 태그 조작 가능
+
+
+            A. HTML > name
+            B. CSS   > id, cass
+            C. BOM  > name
+            D. DOM  > name, id, class
+
+        */
+    </script>
+</head>
+<body>
+    <!-- ex10_bom.html -->
+    <h1>Title</h1>
+    <img src="../images/catty01.png" name="cat1" id="cat1" alt="">
+    <hr>
+
+    <form action="" id="form1" name="form1">
+        <img src="../images/catty02.png" alt="">
+        <br>
+        <label for="">이름: </label>
+        <input type="text" name="txt1" id="txt1">
+        <br>
+        <label for="">나이: </label>
+        <input type="number" name="txt2" id="txt2">
+        <br>
+        <input type="submit" value="등록하기" name="btnSubmit" id="btnSubmit">
+    </form>
+
+    <script>
+        // HTML 구조 > 특정 태그 접근 > 조작
+        window.document.form1.txt1.value = '써니';
+
+
+    </script>
+
+</body>
+</html>
