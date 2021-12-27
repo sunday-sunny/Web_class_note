@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            border : 2px solid lightblue;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex17_window.html -->
+    <h1>window 객체</h1>
+    <form action="" name="pform">
+
+        <fieldset>
+            <legend>새창 열기&닫기</legend>
+            <input type="button" name="pbtn1" value="자식창 띄우기">
+            <input type="button" name="pbtn2" value="자식창 닫기">
+        </fieldset>
+        
+        <fieldset>
+            <legend>창(자원) 접근</legend>
+            <input type="text" name="ptxt1">
+            <input type="button" name="pbtn3" value="자식창에 있는 텍스트박스 접근하기">
+        </fieldset>
+        
+        <fieldset>
+            <legend>아이디</legend>
+            <input type="text" name="ptxt2">
+            <input type="button" name="pbtn4" value="중복검사">
+        </fieldset>
+
+    </form>
+
+    <script>
+        var pbtn1 = window.document.pform.pbtn1;
+        var pbtn2 = window.document.pform.pbtn2;
+        var pbtn3 = window.document.pform.pbtn3;
+        var pbtn4 = window.document.pform.pbtn4;
+        var ptxt2 = window.document.pform.ptxt2;
+        var child; 
+
+        pbtn1.onclick = m1;
+        pbtn2.onclick = m2;
+        pbtn3.onclick = m3;
+
+        function m1() {
+            // window.open('자식창 문서 URL', '이름', '옵션');
+            // 1. URL
+            // 2. 이름 > 중복창 방지
+            // 3. 옵션 > 
+            
+            // window.open('https://naver.com', 'child', '');
+            child = window.open('ex17_child.html','child', 'width=300 height=600');
+            console.log(child);
+        }
+
+        function m2() {
+            // 자식창 닫기
+            child.close();
+
+        }
+
+        function m3() {
+            // 자식창에 있는 문서의 요소 접근하기
+            child.document.cform.ctxt1.value = '부모창에서 접근했습니다';
+
+        }
+
+        function m4() {
+            window.open('ex17_child.html', 'idcheck', 'width=300 hegiht=400');
+        }
+
+
+    </script>
+
+
+</body>
+</html>

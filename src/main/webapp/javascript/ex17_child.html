@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            border : 2px solid lightblue;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex17_child.html -->
+    <h1>자식창</h1>
+
+    <form action="" name="cform">
+
+        <fieldset>
+            <legend>창(자원) 접근</legend>
+            <input type="text" name="ctxt1">
+            <input type="button" name="cbtn1" value="부모창에 있는 텍스트박스 접근하기">
+        </fieldset>
+
+        <fieldset>
+            <legend>아이디</legend>
+            <input type="text" name="ctxt2">
+            <input type="button" name="cbtn2" value="중복검사">
+            <hr>
+            <input type="button" value="사용하기" name="cbtn3">
+            <input type="button" value="닫기" name="cbtn4">
+        </fieldset>
+        
+    </form>
+
+    <script>
+        
+        window.document.cform.cbtn1.onclick = m1;
+        window.document.cform.cbtn3.onclick = m2;
+
+        function m1() {
+            // opener > 부모창의 window 객체
+            opener.document.pform.ptxt1.value = '자식창에서 접근했습니다.';
+        }
+
+        function m2() {
+            // 1. 자식창의 허가된 아이디를 부모창의 텍스트박스 복사
+            // 2. 자식창 닫기
+
+            opener.document.pform.ptxt2.value = window.document.cform.ctxt2.value;
+            window.close()
+
+
+        }
+
+    </script>
+
+
+</body>
+</html>

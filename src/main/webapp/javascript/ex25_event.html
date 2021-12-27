@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .item {
+            border : 3px solid lightblue;
+            background-color: aliceblue;
+            padding: 10px;
+            width: 400px;
+            height: 100px;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .item > input[type=button] {
+            border: none;
+            width: 100px;
+            height: 30px;
+            background-color: lightblue;
+            border-radius: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .item > input:hover {
+            background-color: lightskyblue;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <!-- ex25_event.html -->
+
+    <form action="" name="form1">
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onclick="m1();">
+            <input type="button" value="노랑" name="btnYellow" onclick="m2();">
+            <input type="button" value="파랑" name="btnBlue" onclick="m3();">
+        </div>
+    </form>
+    
+    <form action="" name="form1">
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onclick="m4('tomato');">
+            <input type="button" value="노랑" name="btnYellow" onclick="m4('gold');">
+            <input type="button" value="파랑" name="btnBlue" onclick="m4('lightblue');">
+        </div>
+    </form>
+    
+    <form action="" name="form1">
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onclick="m5(this)">
+            <input type="button" value="노랑" name="btnYellow" onclick="m5(this)">
+            <input type="button" value="파랑" name="btnBlue" onclick="m5(this)">
+        </div>
+    </form>
+    
+    <form action="" name="form1">
+        <div class="item">
+            <input type="button" value="tomato" name="btnRed" onclick="m6(this)">
+            <input type="button" value="gold" name="btnYellow" onclick="m6(this)">
+            <input type="button" value="lightblue" name="btnBlue" onclick="m6(this)">
+        </div>
+    </form>
+
+    <form action="" name="form1">
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onclick="m7(this)" data-color='tomato'>
+            <input type="button" value="노랑" name="btnYellow" onclick="m7(this)" data-color='gold'>
+            <input type="button" value="파랑" name="btnBlue" onclick="m7(this)" data-color='lightblue'>
+        </div>
+    </form>
+    
+    <form action="" name="form1">
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed" onclick="m8()" data-color='tomato'>
+            <input type="button" value="노랑" name="btnYellow" onclick="m8()" data-color='gold'>
+            <input type="button" value="파랑" name="btnBlue" onclick="m8()" data-color='lightblue'>
+        </div>
+    </form>
+
+    <form action="" name="form1">
+        <div class="item">
+            <input type="button" value="빨강" name="btnRed9" >
+            <input type="button" value="노랑" name="btnYellow9" >
+            <input type="button" value="파랑" name="btnBlue9" >
+        </div>
+    </form>
+    
+    <form action="" name="form1">
+        <div class="item">
+            <input type="button" value="빨강" name="btn" data-color='tomato'>
+            <input type="button" value="노랑" name="btn" data-color='gold'>
+            <input type="button" value="파랑" name="btn" data-color='lightblue'>
+        </div>
+    </form>
+
+    <div class="item">
+        <input type="button" value="버튼" name="btn11" data-color1="tomato" data-color2="">
+    </div>
+
+
+    <script>
+        /* 여러 개 태그에 이벤트 적용하는 방법!
+            1. 각 태그에 직접 정적으로 등록
+        */
+
+        function m1() {
+            document.body.bgColor = 'tomato';
+        }
+        
+        function m2() {
+            document.body.bgColor = 'gold';
+        }
+        
+        function m3() {
+            document.body.bgColor = 'lightblue';
+        }
+        
+        function m4(color) {
+            document.body.bgColor = color;
+        }
+
+        function m5(btn) {
+            if(btn.name == 'btnRed')
+                document.body.bgColor = 'tomato';
+            else if(btn.name == 'btnYellow')
+                document.body.bgColor = 'gold';
+            else if(btn.name == 'btnBlue')
+                document.body.bgColor = 'lightblue';
+        }
+
+        function m6(btn) {
+            document.body.bgColor = btn.value;
+        }
+
+        function m7(btn) {
+            document.body.bgColor = btn.dataset['color'];
+        }
+
+        function m8() {
+            // event.srcElement > 이벤트 발생시킨 주체(태그)
+            document.body.bgColor = event.srcElement.dataset['color'];
+        }
+
+        document.form1.btnRed9.onclick = m9;
+        document.form1.btnYellow9.onclick = m9;
+        document.form1.btnBlue9.onclick = m9;
+
+        var colors = [];
+        colors['btnRed9'] = 'tomato';
+        colors['btnYellow9'] = 'gold';
+        colors['btnBule9'] = 'lightblue';
+
+
+        function m9() {
+            document.body.bgColor = colors[event.srcElement.name];
+        }
+
+        // <ooo name="a">
+        // - 문서 내에 1개 > 단일 객체 반환 
+        // - 문서 내에 N개 > 배열 반환
+        // document.form1.btn.length;
+
+        for(var i=0; i < document.form1.btn.length; i++)
+            document.form1.btn[i].onclick = m10;
+
+        function m10() {
+            alert('');
+            document.body.bgColor = event.srcElement.dataset['color'];     
+        }
+
+        document.form1.btn11.onmouseover = m11;
+        document.form1.btn11.onmouseout = m11;
+
+        function m11() {
+            // 어떤 버튼이 나를 불렀나? > event.srcEvent
+            // 누가? btn11
+            alert(event.type);
+
+            if(event.type == 'mouseover')
+                document.body.bgColor = event.srcElement.dataset['color1'];
+            else if(event.type == 'mouseout')
+                document.body.bgColor = event.srcElement.dataset['color2'];
+        }
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex24_messagebox.html -->
+
+    <input type="button" name="btn1" value="버튼1">
+    <input type="button" name="btn2" value="버튼2">
+    <input type="button" name="btn3" value="버튼3">
+
+    <script>
+        document.all.btn1.onclick = m1;
+        document.all.btn2.onclick = m2;
+        document.all.btn3.onclick = m3;
+
+        // 메시지 박스
+        // 1. void alert(메시지);       > 단순 메시지 전달용
+        // 2. boolean confirm(메시지);  > 의사 확인용
+        // 3. string prompt(메시지, 초기값);
+
+        function m1() {
+            alert('메시지');
+        }
+
+        function m2() {
+            var result = confirm('메시지');
+            console.log(result);
+
+            if(confirm('정말 삭제하겠습니까?'))
+                console.log('삭제 작업');
+            else
+                console.log('취소');
+        }
+
+        function m3() {
+            prompt('메시지', '초기값');
+        }
+
+
+    </script>
+</body>
+</html>

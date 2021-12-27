@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex20_history.html -->
+    <input type="button" value="뒤로가기" name="btn1">
+    <input type="button" value="앞으로가기" name="btn2">
+    
+    <script>
+        
+        document.all.btn1.onclick = m1;
+        document.all.btn2.onclick = m2;
+
+        // 현재 > 
+
+        function m1() {
+            //window.history.back(); // 뒤로가기
+            //window.history.forward(); // 앞으로가기
+            //widnow.history.go(); // 사용자정의
+
+            history.back();
+            history.go(-2);
+        }
+
+        function m2() {
+            history.forward();
+        }
+        
+    </script>
+</body>
+</html>
