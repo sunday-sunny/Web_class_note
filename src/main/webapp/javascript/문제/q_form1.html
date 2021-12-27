@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            width: 600px;
+            height: 200px;
+        }
+
+        table, tr, td {
+            border : 1px solid grey;
+            font-size: 18px;
+        }
+
+        td:first-child {
+            text-align: center;
+            background-color: lightyellow;
+        }
+
+        td:last-child {
+            padding-left: 10px;
+        }
+
+        input[type="text"] {
+            width: 70px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- q_form1.html -->
+
+    <table>
+        <tr>
+            <td>주민번호</td>
+            <td><input type="text" name="firstBirth">-<input type="text" name="lastBirth"></td>
+        </tr>
+        <tr>
+            <td>생년월일</td>
+            <td>
+                <input type="text" name="year">년
+                <input type="text" name="month">월
+                <input type="text" name="day">일
+            </td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" name="rbMan" id=""> 남자
+                <input type="radio" name="rbWoman" id=""> 여자
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        var firstBirth = document.all.firstBirth;
+        var lastBirth = document.all.lastBirth;
+
+        var year = document.all.year;
+        var month = document.all.month;
+        var day = document.all.day;
+
+        var rbMan = document.all.rbMan;
+        var rbWoman = document.all.rbWoman;
+
+        firstBirth.onkeyup = parseBirth;
+        lastBirth.onkeyup = checkGender;
+
+
+        function parseBirth() {
+            if(firstBirth.value.length == 6){
+                year.value = '19' + firstBirth.value.substring(0,2);
+                month.value = firstBirth.value.substring(2,4);
+                day.value = firstBirth.value.substring(4,6);
+                lastBirth.focus();
+            }
+        }
+
+        function checkGender() {
+            var gender = lastBirth.value.substring(0,1);
+
+            if(gender == 1 || gender == 3){
+                rbMan.checked = true;
+                rbWoman.checked = false;
+            }
+            else if(gender == 2 || gender == 4){
+                rbMan.checked = false;
+                rbWoman.checked = true;
+            }
+        }
+
+    </script>
+
+
+
+</body>
+</html>

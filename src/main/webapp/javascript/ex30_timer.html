@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex30_timer.html -->
+    <h1>타이머</h1>
+
+    <form action="" name="form1">
+        <input type="button" value="버튼1" name="btn1">
+        <input type="button" value="버튼2" name="btn2">
+        <hr>
+        <input type="text" name="txt1">
+
+        <hr>
+        <img src="../images/catty01.png" name="cat1">
+    </form>
+
+    <script>
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var txt1 = document.form1.txt1;
+        var cat1 = document.form1.image["cat1"];
+
+        /* 타이머 
+            
+            시작
+            1. setTimeout(할일, 시간)
+                - 1회성 타이머
+
+            2. setInterval(할일, 시간)
+                - 반복 타이머
+
+            종료
+            1. clearTimout(timer id)
+            2. clearInterval(timer id)
+            
+        */
+
+
+        // ex1. 
+        btn1.onclick = m1;
+        var timer = 0;
+        var n = 1;
+
+        function m1() {
+            // setTimeout(f1, 1000); // 1초 뒤 f1 호출
+            if(timer == 0 ) {
+                timer = setInterval(f1, 500);
+                console.log(timer);
+            }
+        }
+
+        function f1() {
+            // txt1.value = '따르릉';
+            // txt1.value = (new Date()).toLocaleTimeString();
+            txt1.value = n;
+            n++;
+        }
+        
+        btn2.onclick = m2;
+        function m2() {
+            clearInterval(timer);
+            timer = 0; // 다시 시작을 위해 초기화
+        }
+
+
+
+        // ex2. 
+        cat.onclick = m3;
+        var m = 1;
+        var ctimer = 0;
+
+        function m3() {
+            if(ctimer == 0)
+                ctimer = setInterval(f3, 1000);
+            else {
+                clearInterval(ctimer);
+                ctimer = 0;
+            }
+
+        }
+
+        function f3() {
+            m++;
+            if(m > 9) m = 1;
+            cat1.src = '../images/catty0' + m + '.png';
+        }
+
+
+    </script>
+
+
+</body>
+</html>

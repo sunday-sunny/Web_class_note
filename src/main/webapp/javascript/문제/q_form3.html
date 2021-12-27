@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q_form3</title>
+    <style>
+
+        legend {
+            font-size: 18px;
+        }
+
+        fieldset {
+            margin: 30px 0px;
+            width: 500px;
+        }
+
+        label {
+            display: block;
+            margin : 10px 0px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>주문하기</h1>
+
+    <form action="" name="form1" class="orderForm">
+        <fieldset>
+            <legend>주문하시는 분</legend>
+            <label for="">
+                이름 :
+                <input type="text" name="orderName">
+            </label>
+            <label for="">
+                주소 :
+                <input type="text" name="orderAddress">
+            </label>
+        </fieldset>
+        
+        <label for="" class="cbLabel">
+            <input type="checkbox" name="cb1" id=""> 주문하시는분과 정보가 동일합니다.
+        </label>
+
+        <fieldset>
+            <legend>받으시는 분</legend>
+            <label for="">
+                이름 :
+                <input type="text" name="receiveName">
+            </label>
+            <label for="">
+                주소 :
+                <input type="text" name="receiveAddress">
+            </label>
+        </fieldset>
+    
+    </form>
+
+
+    <script>
+        var orderName = document.form1.orderName;
+        var orderAddress = document.form1.orderAddress;
+        var receiveName = document.form1.receiveName;
+        var receiveAddress = document.form1.receiveAddress;
+
+        var cb1 = document.form1.cb1;
+        cb1.onchange= m1;
+
+        function m1() {
+            if(cb1.checked){
+                receiveName.value = orderName.value;
+                receiveAddress.value = orderAddress.value;
+            }
+            else {
+                receiveName.value = '';
+                receiveAddress.value = '';
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
