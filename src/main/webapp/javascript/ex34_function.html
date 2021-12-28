@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex34_function.html -->
+
+    <input type="button" value="버튼1" name="btn1">
+    <input type="button" value="버튼2" name="btn2">
+
+    <script>
+        /* JavaScript Function 
+            - "함수는 1급 객체이다." > 함수형 언어의 특징
+            - first class object, first class citizen
+            - 함수를 객체처럼 취급할 수 있다. > 데이터(값)처럼 취급할 수 있다.
+
+            1. 함수를 변수나 데이터 구조에 담을 수 있다(저장할 수 있다.)
+            2. 함수를 매개변수에 전달할 수 있다.
+            3. 함수를 반환값으로 사용할 수 있다.
+        
+        */ 
+
+        var m1;
+        function f1() {
+            console.log('f1');
+        }
+
+        // 함수가 정의된 주소값 복사 
+        m1 = f1;
+
+        // m1 변수를 함수처럼 호출
+        m1();
+
+        // JavaScript에서 함수를 만드는 방법
+        // 1. 함수 선언문
+        // 2. 함수 표현식(리터럴) == 익명함수(Anonymous Function )
+
+        var a2 = function () {
+            console.log('a2');
+        };
+        a2();
+
+        // 즉시 호출 > 스코프를 임으로 형성하기 위해
+        (function () {
+            console.log('a3');
+        })();
+
+
+        document.all.btn1.onclick = m1;
+        function m1() {
+            alert(1);
+        }
+        
+        document.all.btn2.onclick = function() {
+            alert(2);
+        };
+        console.clear();
+        
+
+        function f2() {
+            console.log('f2');
+        }
+
+        function f3(fn) {
+            console.log('f3');
+            fn();
+        }
+
+        // 함수를 매개변수로 전달
+        f3(f2);
+        f3(function () {
+            console.log('홍길동');
+        });
+
+        function f4() {
+            console.log('f4');
+        }
+
+        function f5() {
+            return f4;
+        }
+
+        var m4 = f5();
+        m4();
+        f5()();
+
+        
+
+
+    </script>
+</body>
+</html>

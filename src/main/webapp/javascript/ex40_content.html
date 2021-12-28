@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #sample {
+            /* border : 1px solid black; */
+            width : 750px;
+        }
+
+        #sample::after {
+            content : '';
+            display: block;
+            clear: both;
+        }
+
+        #sample > img {
+            width : 150px;
+            float: left;
+            border-radius: 10px;
+            cursor : pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #sample > img:hover {
+            opacity: 1;
+        }
+
+        #content {
+            margin-top: 50px;
+            width : 750px;
+        }
+
+        #content::after {
+            content : '';
+            display: block;
+            clear: both;
+        }
+
+        #content > img {
+            width: 375;
+            border-radius: 15px;
+            float : left;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex40_content.html -->
+    <div id="sample">
+        <img src="../images/cat01.jpg" alt="">
+        <img src="../images/cat02.jpg" alt="">
+        <img src="../images/cat03.jpg" alt="">
+        <img src="../images/cat04.jpg" alt="">
+        <img src="../images/cat05.jpg" alt="">
+        <img src="../images/dog01.jpg" alt="">
+        <img src="../images/dog02.jpg" alt="">
+        <img src="../images/dog03.jpg" alt="">
+        <img src="../images/dog04.jpg" alt="">
+        <img src="../images/dog05.jpg" alt="">
+    </div>
+    <hr>
+    <input type="button" value="clear" id="btnClear">
+    <hr>
+    
+    <div id="content">
+
+
+    </div>
+    
+    <script>
+        const content = document.getElementById('content');
+        const img = document.getElementsByTagName('img');
+        const btnClear = document.getElementById('btnClear');
+
+        for(let i = 0; i < img.length; i++){
+            img[i].onclick = function(){
+                // console.log(img[i].outerHTML);
+                // content.innerHTML += img[i].outerHTML;
+
+                /* 선생님 풀이 */
+                let filename = getFileName(event.srcElement.src);
+                let tmp = '<img src="../images' + filename + '">';
+                content.innerHTML += tmp;
+            };
+        }
+
+        function getFileName(path){
+            let index = path.lastIndexOf('/');
+            return path.substr(index);
+        }
+
+
+        btnClear.onclick = function() {
+
+            if(content.innerHTML != ''){
+                if(confirm('정말 삭제하겠습니까?'))
+                    content.innerHTML = '';
+            }
+        };
+
+
+    </script>
+
+</body>
+</html>

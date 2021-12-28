@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex35_constructor.html -->
+
+    <script>
+
+        /* 생성자 함수
+            - 클래스 역할 = 자바 클래스 + 자바 생성자
+            - 객체를 생성하는 용도 > 전용 함수 
+            - *** 이름을 파스칼 표기(대문자 시작!!)
+        */
+
+        var user1 = {
+            name : '홍길동',
+            age : 20,
+            hello : function () {
+                console.log(this.name, this.age);
+            }
+        };
+
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+            this.hello = function() {
+                console.log(this.name, this.age);
+            };
+        }
+
+        // *** 생성자 함수는 일반 함수처럼 호출하지 않고, 반드시 new 연산자와 같이 호출!
+        // 1. new > new Object() > this(***)
+        // 2. 생성자 함수 > 멤버 추가 + 멤버 초기화
+        var hong = new User('홍길동', 20);
+        hong.hello();
+
+        var test = new User('테스트', 22);
+        test.hello();
+
+        // 객체는 모두 object형이다 > 구분이 안된다 > 구분할 상황 > 생성자 함수 사용 
+
+    </script>
+</body>
+</html>

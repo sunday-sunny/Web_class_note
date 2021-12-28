@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex31_variable.html -->
+    
+
+    <script>
+
+        /* JavaScript Core
+            - ES5 이전 + ES6 이후
+
+            변수 선언하기
+            1. var
+                - BOM ~ DOM ~ ES6
+                - function-scoped
+                - 중복 선언 가능
+
+            2. let
+                - ES6
+                - block-scoped
+                - 중복 선언 불가능
+                - *변수 선언
+
+            3. const
+                - ES6
+                - block-scoped
+                - 중복 선언 불가능
+                - *상수 선언
+
+        */  
+
+        // var 가능 
+        for(var i = 0; i < 10; i++)
+            console.log(i);
+        console.log('out of loop : ', i);
+
+        // let 불가능
+        for(let j = 0; j < 10; j++)
+            console.log(j);
+        console.log('out of loop :', j);
+        console.clear();
+
+
+
+        /* *** let보다 const를 사용하는 것 권장 > 프로그램 안정성을 우선하는 멘트
+
+            1. let
+                - 통제 가능 변수
+
+            2. const
+                - 참조형 값
+                - 예측 불가능 변수 
+        */
+        
+    </script>
+</body>
+</html>

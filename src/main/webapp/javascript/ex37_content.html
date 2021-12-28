@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex37_content.html -->
+    <h1>Content</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+    <div id="div1">홍길동</div>
+
+    <script>
+        const btn1 = document.getElementById('btn1');
+        const div1 = document.getElementById('div1');
+
+        btn1.onclick = function() {
+
+            /* Content
+            1. innerText
+                - 시작 태그와 끝 태그 사이의 문자열 읽기/쓰기 프로퍼티
+                - 내용물의 HTML 구문은 해석되지 않는다
+                - 비표준(MS)
+            
+            2. innerHTML
+                - 시작 태그와 끝 태그 사이의 문자열 읽기/쓰기 프로퍼티
+                - 내용물의 HTML 구문은 해석된다.
+                - 동적으로 태그를 생성하거나 삭제할 때 많이 사용된다.
+
+            3. outerText
+                - 본인 + 자식
+                
+            4. outerHTML
+                - 본인 + 자식
+            
+            5. textContent
+                - innerText와 동일
+                - 표준
+
+            */
+
+            /* 1. innerText */
+            // alert(div1.innerText);
+            // div1.innerText = '별나비';
+            // div1.innerText = '<b>별나비</b>';
+
+
+            /* 2. innerHTML */
+            // alert(div1.innerHTML);
+            // div1.innerHTML = '별나비';
+            div1.innerHTML = '<b>별나비</b>';
+            // div1.innerHTML = '<input type="text">';
+            div1.innerHTML += '<img src="../images/catty01.png">';
+
+        };
+
+
+    </script>
+
+</body>
+</html>

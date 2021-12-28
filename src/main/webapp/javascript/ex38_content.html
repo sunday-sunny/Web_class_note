@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        fieldset {
+            width: 200px;
+        }
+        
+        fieldset > div {
+            margin : 10px;
+        }
+
+        #tbl {
+            border : 1px solid gray;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-left: 3px;
+
+        }
+
+        #tbl td {
+            border : 1px solid gray;
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex38_content.html -->
+    
+    <h1>테이블 생성하기</h1>
+
+    <fieldset>
+        <legend>행x열</legend>
+        <div>
+            행 : <select id="selRow"></select>
+        </div>
+        <div>
+            열 : <select id="selColumn"></select>
+        </div>
+        <div>
+            <input type="button" value="생성하기" id="btnCreate">
+        </div>
+    </fieldset>
+
+
+    <table id="tbl">
+
+    </table>
+
+
+
+    <script>
+        
+        const selRow = document.getElementById('selRow');
+        const selColumn = document.getElementById('selColumn');
+        const btnCreate = document.getElementById('btnCreate');
+
+        // 셀렉트 박스 초기화
+        for(let i = 1; i <= 10; i++){
+            selRow.options.add(new Option(i, i));
+            selColumn.options.add(new Option(i, i));
+        }
+
+        btnCreate.onclick = function() {
+            let tmp = '';
+            
+            // 행
+            for(let i = 0; i < selRow.value; i++){
+                tmp += '<tr>';
+
+                // 열
+                for(let j = 0; j < selColumn.value; j++){
+                    tmp += '<td>';
+                    tmp += '(' + i  + ',' + j + ')';
+                    tmp += '</td>';
+                }
+                tmp += '</tr>';
+            }
+
+            document.getElementById('tbl').innerHTML = tmp;
+
+        };
+
+    </script>
+
+</body>
+</html>

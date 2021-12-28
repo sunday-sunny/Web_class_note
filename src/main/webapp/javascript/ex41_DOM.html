@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        #n7 {
+            border-width: 10px;
+        }
+
+        .check {
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ex41_DOM.html -->
+
+    <!-- 라인 정리 : 전체 선택 + Ctrl K + Ctrl F -->
+
+
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+    <div id="n1">
+        할아버지
+        <div id="n2">
+            큰아버지
+            <div id="n5">
+                사촌
+            </div>
+        </div>
+        <div id="n3">
+            부모
+            <div id="n6">
+                형
+            </div>
+            <div id="n7">
+                나
+                <div id="n10">
+                    첫째 자식
+                </div>
+                <div id="n11">
+                    둘째 자식
+                    <div id="n13">
+                        손자
+                    </div>
+                </div>
+                <div id="n12">
+                    막내 자식
+                </div>
+            </div>
+            <div id="n8">
+                막내 동생
+            </div>
+        </div>
+        <div id="n4">
+            작은 아빠
+            <div id="n9">
+                사촌
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('btn1').onclick = function() {
+            
+            /* DOM 트리의 구성 요소(노드)
+                - DOM 트리는 태그들로 구성되지 않는다(***) > DOM 트리는 모든 요소로 구성된다.
+                - 모든 요소 > 태그, PCDATA, 주석, 엔티티, 선언문, 속성 등..
+                    1. 태그(1)
+                    2. 속성(2)
+                    3. PCDATA(3)
+                    4. 주석(8)
+                    5. 선언문(13)
+                
+                - 위의 구성요소(노드)의 프로퍼티
+                    1. nodeName > 태그(태그명), 속성(속성명), PCDATA(#text)
+                    2. nodeType > 해당 노드가 어떤 형식 > 열거형(숫자)
+                    3. nodeValue > 태그(null), 속성(속성값), PCDATA(문자열)
+        
+
+                태그 검색
+                - 나를 기준으로 다른 태그(노드)를 검색하는 도구
+                - Axis 검색(표현)
+            */
+
+            // 나
+            const n7 = document.getElementById('n7');
+
+            /* 자식 태그
+                - n7.childNodes > 자식 노드들(모든 요소)
+                - n7.firstChild > 첫번째 자식 노드 > n7.childNodes[0]
+                - n7.lastChild  > 마지막 자식 노드 > n7.childNodes[n7.childNodes.length-1]
+                
+                - n7.children           > 자식 노드들(태그만)
+                - n7.firstElementChild  > 첫번째 자식 태그 노드 > n7.children[0]
+                - n7.lastElementChild   > 마지막 자식 태그 노드 > n7.children[n7.children.length-1]
+            */
+
+            //console.log(n7.firstChild);
+            //console.log(n7.firstElementChild);
+            for(let i = 0; i < n7.childNodes.length; i++){
+                if(n7.childNodes[i].nodeType == 1){
+                    console.log(n7.childNodes[i].nodeType, 
+                                n7.childNodes[i].nodeName, 
+                                n7.childNodes[i].nodeValue);
+                }
+            }
+
+            for(let i = 0; i < n7.children.length; i++){
+                console.log(n7.children[i].nodeType,
+                            n7.children[i].nodeName);
+            }
+
+            
+            // <div class="">
+            // n7.children[1].className = 'check';
+            // n7.firstElementChild.className = 'check';
+            // n7.lastElementChild.className = 'check';
+
+            // n7.children[1].children[0].className = 'check';
+            
+
+            /* 직계 조상..
+                - n7.parentNode
+                - n7.parentElement 
+            */
+            // n7.parentElement.className = 'check';
+            
+            // DOM 최상위 객체는 document 객체이다.
+            // alert(n7.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName);
+            
+
+            /* 형제 
+                - n7.previousSibling;
+                - n7.nextSibling;
+
+                - n7.previousElementSibling;
+                - n7.nextElementSibling;
+            */
+            
+            n7.previousElementSibling.className = 'check';
+            n7.nextElementSibling.className = 'check';
+            
+            // className > BOM > 단일 클래스 속성
+            // classList > DOM > 배열(N개 클래스 속성)
+
+
+            // 무분별한 id와 class 남발 > 가독성 저하 or 코드 관리 힘들게 > 최소한의 식별자로 탐색 > Axis
+            // 결론 : (id + class) && Axis 
+        };
+
+    </script>
+
+</body>
+
+</html>

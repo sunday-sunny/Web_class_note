@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex33_object.html -->
+
+    <script>
+        
+        /* 객체, Object
+
+        1. 내장 객체
+            - Array, Date, Math, Object 등.. new Array(), new Date()...
+
+        2. BOM 객체
+            - window, document, form, text, button 등..
+            - BOM 트리의 구성 요소들..
+
+        3. DOM 객체
+            - element, attribute, text, comment 등..
+
+        4. 사용자 정의 객체(BOM ~ ES6)
+            - JavaScript는 클래스가 없다. > 내가 원하는 형태(구조)의 객체를 생성할 수 없다.
+            - ES6에서 클래스 생김 > 진짜 클래스가 아니라 클래스처럼 보이는 요소 도입
+
+        
+        사용자 정의 객체 만드는 방법
+        1. Object 클래스 사용
+        2. {} > 객체 리터럴 표기법 사용
+        
+        */
+
+        /*
+            // JAVA
+            class User {
+                public String name;
+                public int age;
+                public String address;
+            }
+
+            User hong = new User();
+            hong.name = "홍길동";
+            hong.age = 20;
+            hong.address = "서울시 강남구";
+        */
+        
+        // 내장 객체
+        var array = new Array();
+        var now = new Date();
+        
+        /* 1. Object 클래스 사용 */
+        // JavaScript의 객체는 프로퍼티(Property)를 자유롭게 생성할 수 있다.
+        var hong = new Object();
+        hong.name = '홍길동';
+        hong.age = 20;
+        hong.address = '서울시 강남구';     // 편함, 가독성 높음
+        hong['nick'] = '강아지';            // 불편, 조작성 높음
+
+        // hong.home-tel = '010-1234-5678' > 불가능
+        hong['home-tel'] = '010-1234-5678';
+
+        console.log(hong.name);
+        console.log(hong.age);
+        console.log(hong.address);
+        console.log(hong["nick"]);
+        console.log(hong.nick);
+        console.log(hong);
+       
+        
+
+        /* 2. {} > 객체 리터럴 표기법 사용 */
+        var hong = { 
+            name:'홍길동', 
+            age:20, 
+            address:'서울시'
+        };
+        console.log(hong);
+        console.clear();
+
+
+        // 객체 = 데이터 + 행동
+        var hong = new Object();
+        hong.name = '홍길동';
+        hong.hello = function() {
+            console.log('안녕하세요!' + this.name + '입니다.');
+        };
+
+        hong.hello();
+
+        
+       var hong = {
+           name : '홍길동',
+           age : 20,
+           address : {
+               sido : '서울시', 
+               gu : '강남구',
+               dong : '역삼동'
+           }, 
+           hello: function() {
+               console.log('안녕하세요.' + this.name + '입니다');
+           },
+           bye : function() {
+               console.log('bye~');
+           }
+       }; 
+
+       console.log(hong);
+
+
+
+
+
+    </script>
+
+</body>
+</html>

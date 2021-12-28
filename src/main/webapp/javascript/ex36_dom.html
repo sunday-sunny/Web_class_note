@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex36_dom.html -->
+
+    <form action="" name="form1">
+        <h1 id="title">DOM</h1>
+        <div>
+            <input type="text" id="txt1" class="txt" name="txt1">
+            <input type="text" id="txt2" class="txt" name="txt2">
+            <input type="text" id="txt3" class="txt" name="txt3">
+        </div>
+    </form>
+
+    <script>
+        
+        /* Dom, Document Object Model
+            - 문서의 실제 내용을 바탕으로 트리구조를 제공
+            - 검색 도구 다양
+            - 조작 도구 다양
+            - 모든 태그 인식
+            - DOM의 모든 기능은 BOM의 document로부터 제공
+
+            DOM에서 제공하는 태그 검색 도구
+            1. id 검색      > document.getElementById('id')
+            2. class 검색   > document.getElementsByClassName('class')
+            3. name 검색    > document.getElementsByName('name')
+            4. 태그명 검색  > document.getElementsByTagName('tag')
+            -----------------------------------------------------------
+            5. 선택자 검색  > document.querySelector('selector')
+                            > document.querySelectorAll('selector')
+        */
+
+        var txt1 = document.getElementById('txt1');
+        txt1.value = '사과';
+
+        var title = document.getElementById('title');
+        title.align = 'center';
+
+        var txt = document.getElementsByClassName('txt');
+
+        for(var i = 0; i < txt.length; i++){
+            txt[i].value = i;
+        }
+
+        // 's' 복수형으로 반환하기 때문에, 객체 하나만 있어도 배열로 반환
+        var txt = document.getElementsByName('txt1');
+        txt[0].value = '바나나';
+
+
+        var txt = document.getElementsByTagName('input');
+        for(var i = 0; i < txt.length; i++)
+            txt.value = i;
+        console.clear();
+
+        var txt1_1 = document.form1.txt1;               // BOM
+        var txt1_2 = document.getElementById('txt1');   // DOM
+
+        // 찾는 방법이 달라도 같은 객체
+        console.log(txt1_1.constructor.name); // HTMLInputElement
+        console.log(txt1_2.constructor.name); // HTMLInputElement
+        
+        
+        txt1_1.value = '100';
+        
+        // DOM > BOM 기능
+        txt1_2.value = '200'; 
+
+
+    </script>
+
+</body>
+</html>
