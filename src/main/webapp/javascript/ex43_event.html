@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            border: 1px solid lightsalmon;
+            background-color: gold;
+            width: 200px;
+            height: 200px;
+        }
+
+        .one {
+            border-width: 5px;
+        }
+
+        .two {
+            background-color: mistyrose;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex43_event.html -->
+
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <hr>
+    <div id="box1" class="box"></div>
+    <img src="file:///D:/class/client/ClientTest/src/main/webapp/images/react.svg" alt="">
+
+    <script>
+
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+        const box1 = document.getElementById('box1');
+
+        /* 1. BOM Event */
+        // btn1.onclick = m1;
+        // btn1.onclick = null;
+
+
+        /* 2. DOM Event */
+        // DOM은 이벤트에 걸린 함수를 관리가 가능하다 > Invocation List
+        btn1.addEventListener('click', m1);
+        btn1.addEventListener('click', m2);
+        btn1.removeEventListener('click', m1);
+
+        btn1.onclick = function() {
+            box1.classList.add('one');
+            box1.classList.add('two');
+            box1.classList.add('three');
+        };
+
+        btn2.onclick = function() {
+            box1.classList.remove('two');
+        };
+        
+
+        function m1() {
+            alert('m1');
+        }
+
+        function m2() {
+            alert('m2');
+        }
+
+
+    </script>
+
+</body>
+</html>

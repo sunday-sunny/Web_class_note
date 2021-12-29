@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex45_window.html -->
+
+
+    <script>
+
+        // 윈도우의 메소드
+        // window.alert();
+
+        // 윈도우의 프로퍼티
+        window.document;
+
+        // var 전역 변수와 전역 함수에 대한 이야기
+        // - 자동으로 window의 프로퍼티로 등록.
+
+        var num = 10;
+        window.num3 = 30;
+
+        console.log(window.num);
+        console.log(window.num3);
+        console.log(num3);
+
+
+        function m3() {
+            console.log(this);
+        }
+        m3();
+
+        function User(name, age) {
+            this.hello = function() {
+                console.log(this);
+            };
+        }
+        const sunny = new User('sunyy', 20);
+        sunny.hello();
+        console.clear();
+
+
+        const choi = {
+            name : '최써니',
+            age : 20,
+            address : '서울',
+            hello: function() {
+                alert('안녕!');
+            }
+        };
+
+        // 프로퍼티 탐색 도구
+        for(let p in choi){
+            console.log(p);
+        }
+        console.log();
+
+        for(let p in window){
+            console.log(p);
+        }
+        console.clear();
+
+        console.time('a'); // 시간 재기 시작 > begin()
+        console.log(100);
+        console.log(200);
+        console.log(300);
+        console.timeEnd('a'); // 시간 재기 끝 > end()
+
+        let num1 = 12345.6789;
+
+        console.time('b');
+        console.log(parseInt(num1));
+        console.timeEnd('b');
+
+        console.time('b');
+        console.log(~~(num1));
+        console.timeEnd('b');
+
+
+
+    </script>
+</body>
+</html>
