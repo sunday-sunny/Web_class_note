@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>Document</title>
+    <style>
+        #box1 { 
+            border : 1px solid black;
+            width : 100px;
+            height : 100px;
+        }
+
+        .tool > i {
+            font-size: 2em;
+            cursor : pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex46_style.html -->
+
+    <h1>JavaScript > CSS </h1>
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <hr>
+    <div id="box1">상자</div>
+
+    <h1>텍스트</h1>
+
+    <div class="tool">
+        <i class="fas fa-search-plus"></i>
+        <i class="fas fa-search-minus"></i>
+    </div>
+    
+    <p id="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eaque asperiores maiores vero alias, nisi in incidunt eveniet, obcaecati ea voluptate voluptatem minima voluptates expedita rerum blanditiis nostrum fugiat! Corporis aut provident voluptatem natus deleniti velit, molestiae fuga dolorum totam voluptatibus obcaecati similique ea dolorem? Iure aspernatur omnis eum, quae et assumenda sint sequi laborum vel voluptates nobis iste harum, architecto molestias temporibus soluta facilis? Illum quaerat quisquam, rem molestias consequatur recusandae aliquid omnis eveniet iusto cum. Libero illum maiores nobis. Aspernatur aperiam fugit tempora omnis repellat totam, dolorum itaque temporibus, quas laudantium suscipit amet est quo corporis nostrum facere dolor quaerat, illo quia? Eius voluptas in enim distinctio dolor libero nostrum explicabo. Sequi ratione beatae neque, culpa maxime, sunt distinctio numquam necessitatibus debitis illum repellendus optio ducimus voluptates. Repudiandae laudantium similique illum cumque voluptatibus voluptas nemo repellendus aspernatur ea cupiditate itaque enim rerum unde, minima vero modi et quo? Possimus praesentium, neque ad vel dolorum saepe est consequuntur soluta assumenda ipsum iure ex delectus nesciunt optio hic, labore qui et sequi enim perspiciatis nam iusto adipisci. Esse quae suscipit vitae reiciendis impedit, nihil autem odit possimus, quaerat a repellat beatae quo eum nostrum atque! Corrupti, aliquam animi! Ut tempore impedit iusto quae animi, necessitatibus asperiores distinctio placeat, accusamus quaerat possimus odit? Quisquam eligendi in adipisci sit magnam explicabo molestiae magni nostrum nam? Reprehenderit quae quas vel ullam suscipit et similique neque exercitationem cumque tenetur? Quo laboriosam quibusdam explicabo aspernatur pariatur quod facilis officia, magni reprehenderit tenetur ullam rerum nisi earum dignissimos quos cupiditate odio. Inventore at quam cumque magni ipsum, eum ut dolores nihil adipisci vitae voluptatibus eligendi possimus exercitationem, voluptates officiis architecto. Accusamus, sed laudantium. Reiciendis est exercitationem perspiciatis enim dolorum? Eius vero corporis quidem voluptas sit ipsam atque architecto illum amet perspiciatis repudiandae facilis, dolores quibusdam obcaecati!
+
+    </p>
+
+
+    <script>
+
+        document.getElementById('btn1').onclick = function() {
+            const box1 = document.getElementById('box1');
+
+            /*
+                JavaScript로 CSS 조작
+                - style 프로퍼티 사용 > CSS 속성의 배열(컬렉션)으로 제공
+            
+            */
+
+            box1.style['color'] = 'gold';
+            box1.style['border'] = '1px solid blue';
+            box1.style.color = 'tomato';
+
+            box1.style['background-color'] = 'gold';
+            box1.style.backgroundColor = 'blue';
+            box1.style.fontSie = '3em';
+            box1.style.backgroundImage = 'url(../images/catty01.png)';
+
+        };
+
+        
+        document.getElementById('btn2').onclick = function() {
+            const box1 = document.getElementById('box1');
+
+            // 상자 크기 늘리기 > 현재 너비 2배
+            // JavaScript에서는 인라인스타일 시트로 정의된 값만 가져올 수 있다.
+            
+            // box1 객체가 가지는 모든 CSS 정보 배열
+            const list = getComputedStyle(box1);
+
+            box1.style.width = parseInt(list.getPropertyValue('width')) * 2 + 'px';
+        }
+
+        const plus = document.getElementsByClassName('tool')[0].children[0];
+        const minus = document.getElementsByClassName('tool')[0].children[1];
+        const content = document.getElementById('content');
+
+        let fontSize = 16;
+
+        plus.onclick = function() {
+            fontSize++;
+            if(fontSize > 30) fontSize = 30;
+            content.style.fontSize = fontSize + 'px';
+        };
+
+        minus.onclick = function() {
+            fontSize--;
+            if(fontSize < 10) fontSize = 10;
+            content.style.fontSize = fontSize + 'px';
+        };
+
+
+    </script>
+
+
+</body>
+</html>

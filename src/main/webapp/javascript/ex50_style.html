@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width:150px;
+            height:150px;
+            position : absolute;
+            left : 0;
+            top : 0;
+        }
+
+        #box1 { background-color: lightcoral;}
+        #box2 { background-color: lightgoldenrodyellow; top:100px}
+        #box3 { background-color: lightskyblue; top:200px}
+        #box4 { background-color: lightgrey; top:300px}
+        #box5 { background-color: lightsteelblue; top : 600px}
+
+    </style>
+</head>
+<body>
+    <!-- ex50_style.html -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+    <img src="../images/catty01.png" alt="" class="box">
+    <img src="../images/catty02.png" alt="" class="box">
+    <img src="../images/catty03.png" alt="" class="box">
+    <h1 class="box">❣</h1>
+
+    <script>
+
+        let isDown = false;
+        let offsetX = 0;
+        let offsetY = 0;
+        let box; // 눌린 상자
+
+        //Drag & Drop > 개체 이동 인터페이스
+        window.onmousedown = function() {
+            if(event.srcElement.className == 'box'){
+                isDown = true;
+                offsetX = event.offsetX;
+                offsetY = event.offsetY;
+                box = event.srcElement;
+            }
+
+        };
+
+        window.onmousemove = function(){
+            if(isDown){
+                box.style.left = event.clientX - offsetX + 'px';
+                box.style.top = event.clientY - offsetY + 'px';
+
+                // 고스트 이미지 현상 제거
+                // -> 현재 이벤트에서 일어날 일을 없었던 일로 하자 ..!
+                event.stopPropagation();
+                return false;
+            }
+        };
+
+        window.onmouseup = function() {
+            isDown = false;
+        };
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

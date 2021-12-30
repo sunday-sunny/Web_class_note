@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            margin: 0;
+        }
+
+
+        .section {
+            width : 800px;
+            margin : 0px auto;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            padding : 20px;
+            padding-bottom: 400px;
+            border-bottom: 1px solid gray;
+        }
+    </style>
+
+
+</head>
+<body>
+    <!-- ex57_style.html -->
+
+    <div class="section">
+        <h1>Index</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, numquam.</p>
+    </div>
+    
+    <div class="section">
+        <h1>About me</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore temporibus pariatur dignissimos ex nostrum illo laborum nam ut incidunt cupiditate?</p>
+    </div>
+    
+    <div class="section">
+        <h1>Career</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non tenetur ipsum corporis nemo ad! Amet quo aperiam quisquam hic quaerat doloremque fugit quidem explicabo. Porro modi voluptas perspiciatis sequi!</p>
+    </div>
+    
+    <div class="section">
+        <h1>Portfolio</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo aut vero cum neque ea voluptate cupiditate culpa, voluptas magni reiciendis earum laborum sit alias. Aliquam quod error doloribus facilis accusantium reprehenderit provident accusamus quis cupiditate, voluptas corrupti velit. Quos, fugit.</p>
+    </div>
+    
+    <div class="section">
+        <h1>Education</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero vero porro cupiditate consectetur perferendis temporibus, beatae magni modi quidem. Corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem commodi dignissimos saepe aspernatur vero dicta obcaecati, repellat praesentium vel eaque ut, voluptate quas, excepturi inventore dolore aliquam maiores nobis neque tempore? Odit, necessitatibus iste molestias fugit commodi vitae, corporis quae, architecto nihil dolor natus ut qui distinctio error quaerat aspernatur.</p>
+    </div>
+
+    <script>
+
+        const list = document.getElementsByClassName('section');
+
+        const s1 = list[0].getBoundingClientRect().top;
+        const s2 = list[1].getBoundingClientRect().top;
+        const s3 = list[2].getBoundingClientRect().top;
+        const s4 = list[3].getBoundingClientRect().top;
+        const s5 = list[4].getBoundingClientRect().top;
+
+        window.onscroll = function() {
+            // console.log(document.scrollY);
+
+            if(window.scrollY < s1){
+                console.log(1);
+                document.body.bgColor = 'white';
+            }
+            else if(window.scrollY < s2) {
+                console.log(2);
+                document.body.bgColor = 'gold';
+            }
+            else if(window.scrollY < s3) {
+                console.log(3);
+                document.body.bgColor = 'lightyellow';
+            }
+            else if(window.scrollY < s4) {
+                console.log(4);
+                document.body.bgColor = 'white';
+            }
+            else if(window.scrollY < s5) {
+                console.log(5);
+                document.body.bgColor = 'white';
+            }
+
+
+        };
+
+        // 좌표계와 상관없이 현재 좌표값 확인 
+        // console.log(document.getElementsByClassName('section')[1].getBoundingClientRect().top);
+
+
+
+
+
+    </script>
+
+</body>
+</html>

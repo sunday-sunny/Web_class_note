@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heart {
+            border: 10px dashed lightpink;
+            width: 300px;
+            height: 300px;
+            background-image: url(../images/heart.png);
+            border-radius: 50%;
+            background-position: 0px 0px;
+            background-repeat: no-repeat;
+        }
+
+        #puma {
+            width: 512px;
+            height: 256px;
+            background-image: url(../images/puma.png);
+            background-position: 0px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ex55_style.html -->
+    <h1>배경 이미지 조작</h1>
+
+    <div id="heart"></div>
+    <hr>
+    <input type="button" value="두근💗" id="btn1">
+    <hr>
+    <div id="puma"></div>
+
+    <script>
+        const btn1 = document.getElementById('btn1');
+        const heart = document.getElementById('heart');
+
+        let x = 0;
+
+        btn1.onclick = function () {
+            x -= 290;
+            if (x < -580) x = 0;
+            heart.style.backgroundPosition = x + 'px 0px';
+        }
+
+        const puma = document.getElementById('puma');
+        let px = 0;
+        let py = 0;
+        let timer = 0;
+
+
+        puma.onclick = function () {
+            if (timer == 0) {
+                timer = setInterval(function () {
+                    px -= 512;
+                    if (px < -(512 * 3)) {
+                        px = 0;
+                        py -= 256;
+
+                        if (py < -256) {
+                            py = 0;
+                        }
+                    }
+                }, 100);
+            } else {
+                setInterval(0)
+            }
+
+            puma.style.backgroundPosition = px + 'px' + py + 'px';
+        }
+
+    </script>
+
+</body>
+
+</html>
