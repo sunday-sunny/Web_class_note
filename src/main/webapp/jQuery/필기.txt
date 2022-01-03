@@ -1,0 +1,9 @@
+jQuery
+- http://jquery.com
+- JavaScript
+
+
+1. jquery 폴더 생성
+2. jquery 설치
+    a. 직접 설치
+    b. CDN 설치
