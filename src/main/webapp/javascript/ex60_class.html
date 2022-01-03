@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex60_class.html -->
+
+
+    <script>
+        // 클래스(x) > 생성자 함수(o)
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.hello = function() {
+                console.log(this.name, this.age);
+            };
+        }
+
+        const p1 = new User('홍길동', 20);
+        p1.hello();
+
+
+        // ES6 > class 
+        class User {
+            
+            // 생성자(예약어)
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+
+            hello() {
+                console.log(this.name, this.age);
+            }
+
+            // Getter > Property
+            // 메소드를 public 변수처럼 취급하는 기술
+            get info() {
+                return this.name + ',' + this.age;
+            }
+
+            set name2(name2){
+                this.name = name2;
+            }
+
+        }
+
+        const u1 = new User('아무개', 25);
+        console.log(ul);
+        console.log(u1.name);
+        console.log(u1.age);
+
+        u1.hello();
+        console.log(u1.info);
+
+        u1.name2 = '하하하';
+        console.log(u1.info);
+
+
+        // class 자식클래스 extends 부모클래스 {}
+
+
+    </script>
+
+
+</body>
+</html>
