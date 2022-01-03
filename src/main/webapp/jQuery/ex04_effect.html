@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #box {
+            border : 1px solid black;
+            width : 200px;
+            height : 200px;
+            background-color: mistyrose;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <!-- ex04_effect.html -->
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <input type="button" value="버튼4" id="btn4">
+    <hr>
+
+    <div id="box">상자</div>
+    
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+
+        // jQuery 함수명의 별칭 > $
+        // jQuery('#btn1') == $('#btn1')
+
+        $('#btn1').click(function(){
+            // jQuery Effect
+            // - 약간의 CSS 트랜지션 효과
+            // 1. hide(time), show(time), toggle(time)
+            // 2. fadeOut(time), fadeIn(time), fadeToggle(time)
+            // 3. slideUp(time), slideDown(time), slideToggle(time)
+            // 4. animate() > 사용자 정의
+
+
+
+            // $('#box').hide('slow');
+            // $('#box').fadeOut();
+            $('#box').slideUp();
+            
+        });
+
+
+        $('#btn2').click(function(){
+            // $('#box').show('fast');
+            // $('#box').fadeIn();
+            $('#box').slideDown();
+
+        });
+
+        $('#btn3').click(function(){
+            // $('#box').toggle(1000);
+            // $('#box').fadeToggle();
+            $('#box').slideToggle();
+        });
+
+        //(method) JQuery.animate(properties: Object, duration?: string | number, complete?: Function)
+        // duration?: string | number, complete?: Function >> 생략 가능
+        $('#btn4').click(function(){
+            $('#box').animate({
+                // width : 'toggle',
+                // height : 'toggle',
+                // opacity : 'toggle'
+
+                width : '+=500px'
+
+            }, 5000, function(){
+                // 콜백 함수
+                // - 애니멩션 종료 직 후 호출
+                alert('완료!');
+            });
+        });
+
+        // 애니메이션 중단 가능
+        $('#box').click(function(){
+
+            // 해당 객체에 진행되고 있는 animate()를 중단
+            $('#box').stop();
+        });
+
+
+    </script>
+
+</body>
+</html>

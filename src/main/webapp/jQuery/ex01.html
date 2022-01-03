@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex01.html -->
+
+    <input type="button" value="버튼" id="btn1">
+
+    <!-- jquery 설치 -->
+
+    <!-- 1. 직접 설치  -->
+    <script src='js/jquery-1.12.4.js'></script>
+    
+    <!-- 2. npm 설치 -->
+    <!-- <script src="node_modules/jquery/dist/jquery.js"></script> -->
+    
+    <!-- 3. CDN 설치 -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+            crossorigin="anonymous"></script> -->
+
+    <script>
+        console.log(jQuery);
+        
+        /* 설치가 완료된 경우 > 
+        ƒ ( selector, context ) {
+
+        // The jQuery object is actually just the init constructor 'enhanced'
+        // Need init if jQuery is called (just allow error to be thrown if not included)
+        return new jQuery…
+        */
+
+        // 1. BOM
+        // document.fonm1.btn1
+
+        // 2. DOM
+        // document.getElementById('btn1')
+
+        // 3. DOM > ES6
+        // 단일 요소 = document.querySelector('CSS 선택자')
+        // 배열 = document.querySelectorAll('CSS 선택자')
+
+        document.querySelector('#btn1').onclick = function() {
+            alert(100);
+        };
+
+        // 4. jQuery > Sizzle Engine > CSS 선택자를 사용해서 태그 검색
+        const btn1 = jQuery('#btn1');
+        btn1.click(function(){
+            alert();
+        });
+
+
+
+    </script>
+</body>
+</html>

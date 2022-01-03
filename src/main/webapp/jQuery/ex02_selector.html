@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex02_selector.html -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4">상자4</div>
+    <p id="box5" class="box">상자5</p>
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+
+        // 1. 태그 선택자
+        const list1 = document.getElementsByTagName('div');
+
+        for(let i = 0; i < list1.length; i++){
+            list1[i].style.color = 'blue';
+        }
+
+        // jQuery 함수의 결과는 무조건 배열(-> jQuery 객체)이다.
+        const list2 = jQuery('div');
+        for(let i = 0; i < list2.length; i++){
+            list1[i].style.color = 'gold';
+        }
+
+        //** jQuery의 결과는 단/복수에 상관없이 그 뒤에 붙은 메소드가 일괄 적용 된다.
+        // 배열 내 각각의 객체마다 조건을 줌
+        jQuery('div').css('color', 'cornflowerblue');
+
+
+        // 2. id 선택자
+        document.getElementById('box1').style.backgroundColor = 'gold';
+        jQuery('#box2').css('background-color', 'gold');
+
+        console.log(document.getElementById('box1') == jQuery('#box1'));
+        console.log(document.getElementById('box1').constructor.name); // HTML 객체
+        console.log(jQuery('#box1')); // jQuery 객체
+
+
+        // 3. class 선택자
+        jQuery('.box').css('font-size', '3em');
+
+        // 4. 그룹 선택자
+        jQuery('#box2, #box5').css('text-decoration', 'underline');
+
+
+        // 5. 자식 선택자
+        // 6. 자손 선택자
+        // 7. 인접 형제 선택자
+        // 8. 형제 선택자
+        // 9. CSS3 각종 필터
+
+
+    </script>
+
+</body>
+</html>

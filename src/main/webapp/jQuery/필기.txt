@@ -6,4 +6,14 @@ jQuery
 1. jquery 폴더 생성
 2. jquery 설치
     a. 직접 설치
+        1. 파일 다운로드 > 폴더 복사 + 참조
+        2. node.js > npm, yarn 사용 설치 > 참조
+            // jquery 폴더에서..
+            1. npm init > package.json 파일 생성됨
+            2. npm install jquery@1.12.4 > node_modules 폴더 생성됨 (npm이 관리하는 폴더) > 안에 jquery 설치된 것 존재
+            3. 사용 >> <script src="node_modules/jquery/dist/jquery.js"></script>
+            4. package.json을 다른 사람에게 전달하면 자동으로 환경세팅 가능함!
+
     b. CDN 설치
+        - 다른 서버의 파일을 참조
+        

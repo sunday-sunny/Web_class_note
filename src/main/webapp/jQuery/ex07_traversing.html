@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border : 2px solid lightskyblue;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        #me {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex07_traversing.html -->
+
+    <div>
+        <div>
+            <div></div>
+            <div></div>
+            <div id="me">
+                <div class="box"></div>
+                <div>
+                    <div class="box"></div>
+                </div>
+                <div></div>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        
+        // 자식
+        // $('#me').children().css('background-color', 'gold');
+        // $('#me').children().children().css('background-color', 'green');
+
+        // $('#me').children().first().css('background-color', 'gold');
+        // $('#me').children().last().css('background-color', 'gold');
+        // $('#me').children().eq(1).css('background-color', 'gold');
+
+        // 나로부터 파생된 모든 태그를 검색
+        // $('#me').find('.box').css('background-color', 'gold');
+
+
+        // 부모
+        // $('#me').parent().css('background-color', 'gold');  // 부모
+        // $('#me').parents().css('background-color', 'gold'); // 직계조상
+        // $('#me').parentsUntil('body').css('background-color', 'gold');
+
+
+        // 형제
+        // $('#me').prev().css('background-color', 'gold');
+        // $('#me').prevAll().css('background-color', 'gold');
+
+        // $('#me').next().css('background-color', 'gold');
+        // $('#me').nextAll().css('background-color', 'gold');
+
+        $('#me').siblings().css('background-color', 'gold');
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

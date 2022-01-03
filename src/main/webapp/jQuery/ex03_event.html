@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="버튼1" id="btn1" class="btn" data-color='tomato'>
+    <input type="button" value="버튼2" id="btn2" class="btn" data-color='gold'>
+    <input type="button" value="버튼3" id="btn3" class="btn" data-color='lightblue'>
+    <input type="button" value="버튼4" id="btn4">
+
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+
+        // BOM
+        // - obj.onclick = function() {};
+
+
+        // DOM
+        // - obj.addEventListener('click', function(){});
+
+
+        // jQuery
+        // - 전용 이벤트 함수
+        jQuery('#btn1').click(function(){
+            alert('버튼1');
+        });
+
+        // - 범용 이벤트 함수
+        // jQuery('#btn2').on('click',function(){
+        //     alert('버튼2');
+        // });
+
+
+        const list = document.getElementsByClassName('btn');
+        for(let i = 0; i < list.length; i++){
+            list[i].onclick = function(){
+                // alert(event.srcElement.id);
+                // alert(this.id);
+                document.body.bgColor = this.dataset['color'];
+            }
+        }
+
+        jQuery('.btn').click(function(){
+            // this -> 자바스크립트 객체
+            // alert(this.id);
+            document.body.bgColor = this.dataset['color'];
+
+            // this.style.color = 'gold';
+            // this.css('color', 'blue'); -> 일반적인 객체에서는 jquery 기능 불가
+
+            // 순수 자바스크립트 객체도 변수로 가지면 jquery 객체로 변환하여 반환
+            jQuery(this).css('color', 'blue');
+
+            // 순수 js -> 순수 js
+            // jQuery -> jQuery
+            // jQuery -> 순수 js + jQuery >> 비선호
+
+
+        });
+
+
+        // 버튼 4 > 이벤트 2개 매핑
+        jQuery('#btn4').mouseover(function(){
+            $(this).css('color', 'gold');
+        }); 
+
+        jQuery('#btn4').on('mouseout', function(){
+            $(this).css('color', 'black');
+        });
+        
+        // btn4를 반환하기 때문에 연쇄적으로 함수 지정 가능
+        // (method) JQuery.mouseover(handler: (eventObject: JQueryMouseEventObject) => any): JQuery (+2 overloads)
+        // $는 자기 자신을 jquery로 쓸 때 쓰는건가..?
+        jQuery('#btn4').mouseout(function(){
+                            $(this).css('color', 'tomato');
+                        })
+                        .mouseout(function(){
+                            $(this).css('color', 'black');
+                        })
+                        .css('background-color', 'white');
+                        
+        
+        // jQuery > 인자값으로 객체를 많이 사용한다 ***
+        jQuery('#btn4').css('color', 'white')
+                        .css('background-color', 'gold')
+                        .css('font-size', '3em');
+        
+        // 1
+        const obj = {
+            // 키:값,
+            'color' : 'gold',
+            'background-color' : 'tomato',
+            'font-size' : '5em'
+        };
+        jQuery('#btn4').css(obj);
+        
+        // 2
+        jQuery('#btn4').css({
+            'color' : 'white',
+            'background-color' : 'lightblue',
+            'font-size' : '3em'
+        });
+
+        jQuery('#btn4').on({
+            'mouseover' : function() {alert('over');},
+            'mouseout' : function() {alert('out');}
+        });
+
+
+
+    </script>
+
+</body>
+</html>

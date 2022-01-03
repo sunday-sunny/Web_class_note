@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one { color : lightcoral;}
+        .two { background-color: moccasin;}
+
+
+    </style>
+</head>
+<body>
+    <!-- ex05_manipulation.html -->
+
+    <input type="button" value="버튼" id="btn">
+    <hr>
+    <div id="box">상자입니다.</div>
+    <input type="text" id="txt">
+
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        
+        /* jQuery 함수 패턴
+        1. A타입
+            - 전용 함수
+            a. obj.test()       // getter, 읽기
+            b. obj.test(value)  //setter, 쓰기
+        
+        2. B타입
+            - 범용 함수
+            a. obj.test(name)           // getter, 읽기
+            b. obj.test(name, value)    // setter, 쓰기
+        
+        */
+
+
+        let n = 0;
+        $('#btn').click(function(){
+            
+            /* innerText */
+            // A. getter
+            // alert($('#box').text());
+
+            // // A. setter
+            // $('#box').text('안녕하세요');
+
+            // // B. setter
+            // $('#box').css('color', 'lightblue');
+
+            // // B. getter
+            // alter($('#box').css('color'));
+
+
+
+            /* 1. 컨텐츠 조작 
+                - innerText > text()
+                - innerHTML > html()
+                - value > val()
+            */
+            // $('#box').text('<b>하하하</b>');
+            // $('#box').html('<b>하하하</b>');
+            // $('#box').html('<input>');
+
+            // alert($('#txt').val());
+            // $('#txt').val('아무개');
+
+            // $('#box').append('<p>문단입니다. ' + n + '</p>');
+            // $('#box').prepend('<p>문단입니다. ' + n + '</p>');
+            // n++;
+
+
+            /* 속성 조작
+            
+            1. BOM
+            - obj.prop
+            - obj.prop = '값'
+            - txt.size = 50;
+
+            2. DOM
+            - obj.getAttribute('prop')
+            - obj.setAttribute('prop', '값')
+            - txt.setAttribute('size', 50)
+
+            3. jQuery 
+            
+            */
+
+            // $('#txt').attr('size', 50);
+            // $('#txt').attr('maxlength', 5);
+            // alert($('#txt').attr('size'));
+
+            // $('#txt').attr('size', 50).attr('maxlength', 10);
+
+            // $('#txt').attr({
+            //     'size' : 100,
+            //     'maxlength' : 10
+            // });
+
+
+            // $('#box').append('<div>상자</div>').css('color', 'gold');
+
+            // 컨텐츠 삭제
+            // - obj.html('');
+            // - obj.text('')
+
+            // 태그 삭제(스스로)
+            // $('#box').remove();
+
+
+            /* jQuery 함수 용도 
+                1. $('CSS 선택자') > 태그 검색 후 jQuery 객체 반환
+                2. $(document.body) > 해당 객체를 jQuery 객체로 변환 후 반환
+                3. $('HTML구문') > 문자열 구문을 실제 jQuery 객체로 생성 후 반환 > 동적 태그 생성
+            */
+
+
+
+            // $('#box').append($('<hr>').attr('width', '100')
+            //                             .css('border', '3px solid gold'));
+
+            // $('#box').addClass('one');
+            // $('#box').addClass('two');
+            $('#box').toggleClass('two');
+        });
+
+        $('#box').click(function(){
+            $(this).removeClass('one');
+        });
+
+        // $(document).click(function(){
+        //     // 매개변수가 없으면 읽기모드. 
+        //     // 매개변수가 없으면 버튼을 대신 클릭하는 효과..?
+        //     // $('#btn').click(); 
+        // });
+        
+
+
+    </script>
+
+
+
+</body>
+</html>
