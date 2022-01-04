@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: mistyrose;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ex11_jqueryui.html -->
+    <h1>Interactions <small>Draggable</small></h1>
+
+
+    <div id="box"></div>
+
+    <img src="../images/catty01.png" alt="" id="cat">
+
+
+    <!-- 순서 주의! jqeury 먼저! -->
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+
+        $('#cat').draggable({
+            cursor : 'move'
+        });
+
+        $('#box').droppable({
+
+            // 원하는 조건 > document 찾아보기!! > 찾는 연습하기~
+            tolerance: 'touch',
+            drop : function(){
+                $(this).css('background-color', 'lightblue');
+                $('#cat').draggable({
+                    containment : '#box'
+                });
+            }
+        });
+
+        $('#cat').dblclick(function(){
+            $('#box').css('background-color', 'mistyrose');
+            $('#cat').draggable({
+                containment : ''
+            });
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
