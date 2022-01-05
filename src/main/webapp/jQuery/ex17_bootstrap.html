@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .container {
+            /* background-color: mistyrose; */
+        }
+
+        .form-control:focus {
+         border-color: #CCC;
+         outline: 0;
+         -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+         box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+      }
+    </style>
+</head>
+
+<body>
+    <!-- ex17_bootstrap.html -->
+    <!-- 
+        디자인 프레임워크(CSS 디자인 프레임워크)
+            * 참고) materialize >> 구글에서 만든 것! 
+
+        사이트
+        - 각각 페이지 제작
+        - 한 페이지 > 각각 CSS 제작
+
+        1. PC용
+        2. 태블릿용
+        3. 핸드폰용
+
+        Bootstrap 3, 4, 5
+        - 반응형 웹 지원
+            > 1장 페이지 > 해상도에 따라 다른 CSS 적용하는 기술
+
+
+     -->
+
+
+    <div class="container">
+        <h1>Bootstrap</h1>
+        <p>문단입니다.</p>
+
+        <h2>버튼</h2>
+        <input type="button" value="버튼" class="">
+        <input type="button" value="버튼" class="btn btn-default">
+        <input type="button" value="버튼" class="btn btn-warning">
+        <input type="button" value="버튼" class="btn btn-info">
+        <input type="button" value="버튼" class="btn btn-success">
+        <input type="button" value="버튼" class="btn btn-danger">
+        <input type="button" value="버튼" class="btn btn-primary">
+
+
+        <h2>버튼 크기</h2>
+        <input type="button" value="버튼" class="btn btn-default btn-xs">
+        <input type="button" value="버튼" class="btn btn-default btn-sm">
+        <input type="button" value="버튼" class="btn btn-default">
+        <input type="button" value="버튼" class="btn btn-default btn-lg">
+
+
+        <h2>테이블</h2>
+        <!-- <table class="table"> -->
+        <!-- <table class="table table-bordered"> -->
+        <!-- <table class="table table-striped"> -->
+        <!-- <table class="table table-hover"> -->
+        <!-- <table class="table table-condensed"> -->
+        <table class="table table-striped table-hover table-condensed">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>성별</th>
+                <th>주소</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>써니</td>
+                <td>20</td>
+                <td>여자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>하하하</td>
+                <td>23</td>
+                <td>남자</td>
+                <td>서울시 성동구 행당동</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>써니</td>
+                <td>20</td>
+                <td>여자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>하하하</td>
+                <td>23</td>
+                <td>남자</td>
+                <td>서울시 성동구 행당동</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>써니</td>
+                <td>20</td>
+                <td>여자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>하하하</td>
+                <td>23</td>
+                <td>남자</td>
+                <td>서울시 성동구 행당동</td>
+            </tr>
+        </table>
+
+
+        <h2>폼</h2>
+        <table class="table table-bordered style=" width: 600px;">
+            <tr>
+                <th style="width : 150px;">텍스트 박스</th>
+                <td style="width : auto;">
+                    <!-- *) form-control은 태그를 block으로 만들어버림 -->
+                    <input type="text" class="form-control">
+                </td>
+            </tr>
+            
+            <tr>
+                <th>암호 박스</th>
+                <td><input type="password" class="form-control"></td>
+            </tr>
+            
+            <tr>
+                <th>다중 라인 박스</th>
+                <td><textarea class="form-control"></textarea></td>
+            </tr>
+            
+            <tr>
+                <th>셀렉트 박스</th>
+                <td>
+                    <select class="form-control">
+                        <option>강아지</option>
+                        <option>고양이</option>
+                        <option>고슴도치</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>체크박스/라디오(지원x)</th>
+                <td><input type="checkbox" class="btn btn-default"></td>
+            </tr>
+            
+            <tr>
+                <th>파일</th>
+                <td><input type="file" class="form-control"></td>
+            </tr>
+        </table>
+        <hr>
+
+        <h2>기타</h2>
+
+        <p>자바를 공부중입니다. 변수는 <code>int a = 10;</code>와 같이 선언합니다! 코드 작성 후 실행은 <kbd>ctrl + F11</kbd>를 누릅니다. (헉 쫀예..! ✨)</p>
+
+        <blockquote>
+            <h3>인용문</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ut reiciendis rerum laboriosam eaque hic saepe labore distinctio, est consequatur illo explicabo similique voluptas autem nesciunt? Distinctio quasi omnis doloremque!
+        </blockquote>
+
+
+        <h3>수업 예제</h3>
+        
+        <pre>
+        class Test {
+            public static void main(String[] args) {
+                System.out.println("Hello");
+            }
+        }
+        </pre>
+        
+        <div class="well">소규모의 독립된 영역을 만들 때 사용</div>
+        <div class="well well-sm">소규모의 독립된 영역을 만들 때 사용</div>
+        <div class="well well-lg">소규모의 독립된 영역을 만들 때 사용</div>
+
+        <div class="alert alert-success">의미 강조한 영역을 만들 때 사용</div>
+        <div class="alert alert-info">의미 강조한 영역을 만들 때 사용</div>
+        <div class="alert alert-danger">의미 강조한 영역을 만들 때 사용</div>
+        <div class="alert alert-warning">의미 강조한 영역을 만들 때 사용</div>
+        <hr>
+
+        <button class="btn btn-danger">
+            <span class="glyphicon glyphicon-heart">태그</span>
+        </button>
+        <hr>
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS <span class="badge">5</span></li>
+            <li>JavaScript</li>
+        </ul>
+        
+        <button class="btn btn-danger">
+            <span class="glyphicon glyphicon-trash"> Remove Items</span>
+            <span class="badge">5</span>
+        </button>
+        <hr>
+
+        <div>안녕하세요. 반갑습니다
+            <span class="label label-default">new</span>
+            <span class="label label-info">new</span>
+            <span class="label label-success">new</span>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+
+</body>
+
+</html>

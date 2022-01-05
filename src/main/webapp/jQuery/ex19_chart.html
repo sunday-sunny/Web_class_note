@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #chart {
+            width : 1000px;
+            margin: auto;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <!-- ex19_chart.html -->
+    <!-- 
+        higtchart
+        - 이런 라이브러리를 공부할 때,
+     -->
+
+    <h1>차트 만들기</h1>
+
+    <div id="chart"></div>
+
+    <script src="js/highcharts.js"></script>
+    <script src="js/series-label.js"></script>
+    <script src="js/exporting.js"></script>     <!-- export 기능! -->
+    <script src="js/export-data.js"></script>   <!-- export 기능! -->
+    <script src="js/accessibility.js"></script>
+
+
+    <script>
+        Highcharts.chart('chart', {
+
+            title: {
+                text: '몸무게 변화 기록, 2021년'
+            },
+
+            subtitle: {
+                text: '기상 직후 기록한 2021년 몸무게'
+            },
+
+            yAxis: {
+                title: {
+                    text: '몸무게(kg)'
+                }
+            },
+
+            xAxis: {
+                accessibility: {
+                    rangeDescription: 'Range: 2010 to 2017'
+                }
+            },
+
+            // 범례
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 1
+                }
+            },
+
+            series: [{
+                name: 'Sunny',
+                data: [48, 50, 55, 52, 58, 55, 54, 49, 53, 55, 52, 50]
+            }, {
+                name: 'mimi',
+                data: [70, 73, 72, 75, 70, 77, 72, 71, 76, 78, 80, 79]
+            // }
+            // {
+            //     name: 'Sales & Distribution',
+            //     data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+            // }, {
+            //     name: 'Project Development',
+            //     data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+            // }, {
+            //     name: 'Other',
+            //     data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>
